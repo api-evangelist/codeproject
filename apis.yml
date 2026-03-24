@@ -1,0 +1,72 @@
+aid: codeproject
+url: https://raw.githubusercontent.com/api-evangelist/codeproject/refs/heads/main/apis.yml
+name: CodeProject
+tags:
+- Developer Community
+- Tutorials
+- Software Development
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+apis:
+- aid: codeproject:codeproject-api
+  name: CodeProject API
+  tags:
+  - Articles
+  - Forum
+  - Questions
+  - Community
+  type: Index
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  baseURL: https://api.codeproject.com
+  description: The CodeProject REST API provides read access to articles, forum messages,
+    questions, and user profile data from the CodeProject community platform. Authentication
+    is handled via OAuth2 Bearer Tokens using Client Credentials, Authorization Code,
+    or Implicit Grant flows.
+  properties:
+  - url: https://api.codeproject.com/Help
+    name: API Documentation
+    type: Documentation
+  - url: https://api.codeproject.com/
+    name: API Base URL
+    type: BaseURL
+  - url: https://api.codeproject.com/Samples
+    name: API Samples
+    type: Samples
+  - url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+    name: The CodeProject API - Part 1
+    type: Article
+  - url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+    name: The CodeProject API - Part 2 Getting Some REST
+    type: Article
+common:
+- url: https://www.codeproject.com/
+  name: CodeProject Website
+  type: Website
+- url: https://api.codeproject.com/Help
+  name: API Documentation
+  type: Documentation
+- url: https://api.codeproject.com/Samples
+  name: API Samples
+  type: Samples
+- url: https://www.codeproject.com/Terms
+  name: Terms of Service
+  type: TermsOfService
+- url: https://www.codeproject.com/privacy
+  name: Privacy Policy
+  type: PrivacyPolicy
+- url: https://www.codeproject.com/Lounge.aspx
+  name: Community Forum
+  type: Forum
+- url: https://www.codeproject.com/KB/
+  name: Articles and Tutorials
+  type: Tutorials
+- url: https://www.codeproject.com/Questions/
+  name: Q&A
+  type: Support
+- url: https://www.codeproject.com/newsletters
+  name: Newsletter
+  type: Newsletter
+- url: https://codeproject.ai/
+  name: CodeProject.AI
+  type: Portal
