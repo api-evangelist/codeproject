@@ -1,11 +1,10 @@
 aid: codeproject
-url: 
-  https://raw.githubusercontent.com/api-evangelist/codeproject/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/codeproject/refs/heads/main/apis.yml
 name: CodeProject
 tags:
   - Developer Community
-  - Tutorials
   - Software Development
+  - Tutorials
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -14,17 +13,13 @@ apis:
     name: CodeProject API
     tags:
       - Articles
+      - Community
       - Forum
       - Questions
-      - Community
     type: Index
-    image: 
-      https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.codeproject.com
-    description: The CodeProject REST API provides read access to articles, 
-      forum messages, questions, and user profile data from the CodeProject 
-      community platform. Authentication is handled via OAuth2 Bearer Tokens 
-      using Client Credentials, Authorization Code, or Implicit Grant flows.
+    description: The CodeProject REST API provides read access to articles, forum messages, questions, and user profile data from the CodeProject community platform. Authentication is handled via OAuth2 Bearer Tokens using Client Credentials, Authorization Code, or Implicit Grant flows.
     properties:
       - url: https://api.codeproject.com/Help
         name: API Documentation
@@ -35,12 +30,10 @@ apis:
       - url: https://api.codeproject.com/Samples
         name: API Samples
         type: Samples
-      - url: 
-          https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+      - url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
         name: The CodeProject API - Part 1
         type: Article
-      - url: 
-          https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+      - url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
         name: The CodeProject API - Part 2 Getting Some REST
         type: Article
 common:
