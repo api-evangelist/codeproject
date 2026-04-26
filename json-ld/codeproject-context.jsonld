@@ -1,0 +1,150 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "codeproject": "https://www.codeproject.com/vocab/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Article": {
+      "@id": "schema:Article",
+      "@context": {
+        "id": "@id",
+        "title": "schema:headline",
+        "summary": "schema:abstract",
+        "url": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "author": {
+          "@id": "schema:author",
+          "@type": "@id"
+        },
+        "rating": {
+          "@id": "schema:aggregateRating",
+          "@type": "xsd:decimal"
+        },
+        "modifiedDate": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        },
+        "publishedDate": {
+          "@id": "dcterms:issued",
+          "@type": "xsd:dateTime"
+        },
+        "tags": {
+          "@id": "schema:keywords",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "ForumMessage": {
+      "@id": "codeproject:ForumMessage",
+      "@context": {
+        "id": "@id",
+        "subject": "schema:about",
+        "body": "schema:text",
+        "forumId": "codeproject:forumId",
+        "threadId": "codeproject:threadId",
+        "author": {
+          "@id": "schema:author",
+          "@type": "@id"
+        },
+        "postedDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Question": {
+      "@id": "schema:Question",
+      "@context": {
+        "id": "@id",
+        "title": "schema:name",
+        "body": "schema:text",
+        "tags": {
+          "@id": "schema:keywords",
+          "@container": "@set"
+        },
+        "askedBy": {
+          "@id": "schema:author",
+          "@type": "@id"
+        },
+        "askedDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "answerCount": {
+          "@id": "schema:answerCount",
+          "@type": "xsd:integer"
+        },
+        "isAnswered": {
+          "@id": "codeproject:isAnswered",
+          "@type": "xsd:boolean"
+        }
+      }
+    },
+
+    "UserProfile": {
+      "@id": "schema:Person",
+      "@context": {
+        "id": "@id",
+        "username": "schema:alternateName",
+        "displayName": "schema:name",
+        "email": "schema:email",
+        "reputation": {
+          "@id": "codeproject:reputation",
+          "@type": "xsd:integer"
+        },
+        "memberSince": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Detection": {
+      "@id": "codeproject:Detection",
+      "@context": {
+        "label": "schema:name",
+        "confidence": {
+          "@id": "codeproject:confidence",
+          "@type": "xsd:decimal"
+        },
+        "x_min": "codeproject:xMin",
+        "y_min": "codeproject:yMin",
+        "x_max": "codeproject:xMax",
+        "y_max": "codeproject:yMax"
+      }
+    },
+
+    "FaceRecognition": {
+      "@id": "codeproject:FaceRecognition",
+      "@context": {
+        "userid": "schema:identifier",
+        "confidence": {
+          "@id": "codeproject:confidence",
+          "@type": "xsd:decimal"
+        },
+        "x_min": "codeproject:xMin",
+        "y_min": "codeproject:yMin",
+        "x_max": "codeproject:xMax",
+        "y_max": "codeproject:yMax"
+      }
+    },
+
+    "LicensePlate": {
+      "@id": "codeproject:LicensePlate",
+      "@context": {
+        "label": "schema:name",
+        "plate": "codeproject:plate",
+        "confidence": {
+          "@id": "codeproject:confidence",
+          "@type": "xsd:decimal"
+        }
+      }
+    }
+  }
+}

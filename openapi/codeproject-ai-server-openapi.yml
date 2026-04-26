@@ -1,0 +1,507 @@
+openapi: 3.1.0
+info:
+  title: CodeProject.AI Server API
+  description: >-
+    CodeProject.AI Server is a self-contained, self-hosted, free and open-source
+    AI service that exposes computer-vision, audio, NLP, and model-training
+    capabilities through a local HTTP REST API. It runs on Windows, macOS,
+    Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container,
+    and is most often integrated with home-automation and surveillance
+    platforms (Blue Iris, Home Assistant, Agent DVR) for object detection,
+    face recognition, ALPR (license-plate), and scene classification. All
+    endpoints are POST and accept multipart/form-data uploads.
+  version: '2.9'
+  contact:
+    name: CodeProject.AI Server
+    url: https://www.codeproject.com/AI/
+  license:
+    name: GPL-3.0
+    url: https://github.com/codeproject/CodeProject.AI-Server/blob/main/LICENSE
+externalDocs:
+  description: CodeProject.AI Server documentation
+  url: https://codeproject.github.io/codeproject.ai/
+servers:
+  - url: http://localhost:32168
+    description: Default local CodeProject.AI Server endpoint
+tags:
+  - name: Status
+    description: Server status, version, logs, and update checks.
+  - name: Vision-Detection
+    description: Object detection across general and custom YOLO models.
+  - name: Vision-Scene
+    description: Scene classification.
+  - name: Vision-Face
+    description: Face detection, comparison, registration, and recognition.
+  - name: Vision-ALPR
+    description: Automatic license-plate recognition.
+  - name: Image-Processing
+    description: Background removal, cartoonise, portrait filter, super-resolution.
+  - name: Audio
+    description: Sound classification.
+  - name: Text
+    description: Sentiment analysis and summarization.
+  - name: Training
+    description: Custom YOLO dataset and model training lifecycle.
+paths:
+  /v1/status/ping:
+    post:
+      operationId: pingServer
+      summary: Server health check
+      tags: [Status]
+      responses:
+        '200':
+          description: Server reachable
+  /v1/status/version:
+    post:
+      operationId: getServerVersion
+      summary: Get server version
+      tags: [Status]
+      responses:
+        '200':
+          description: Version information
+  /v1/status/logs:
+    post:
+      operationId: getServerLogs
+      summary: Retrieve server logs
+      tags: [Status]
+      responses:
+        '200':
+          description: Log entries
+  /v1/status/updateavailable:
+    post:
+      operationId: checkForUpdates
+      summary: Check whether a new server version is available
+      tags: [Status]
+      responses:
+        '200':
+          description: Update availability status
+  /v1/vision/detection:
+    post:
+      operationId: detectObjects
+      summary: Detect objects in an image
+      description: YOLO-based object detection across 80 default classes.
+      tags: [Vision-Detection]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+                  default: 0.4
+      responses:
+        '200':
+          description: Detection results
+  /v1/vision/custom/{modelName}:
+    post:
+      operationId: detectCustom
+      summary: Run a custom-model detection
+      tags: [Vision-Detection]
+      parameters:
+        - name: modelName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Detection results
+  /v1/vision/custom/list:
+    post:
+      operationId: listCustomModels
+      summary: List installed custom detection models
+      tags: [Vision-Detection]
+      responses:
+        '200':
+          description: Custom model list
+  /v1/vision/scene:
+    post:
+      operationId: classifyScene
+      summary: Classify the scene depicted in an image
+      tags: [Vision-Scene]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Scene classification result
+  /v1/vision/face:
+    post:
+      operationId: detectFaces
+      summary: Detect faces in an image
+      tags: [Vision-Face]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Face detection result
+  /v1/vision/face/match:
+    post:
+      operationId: matchFaces
+      summary: Compare two face images for similarity
+      tags: [Vision-Face]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image1, image2]
+              properties:
+                image1:
+                  type: string
+                  format: binary
+                image2:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Match result
+  /v1/vision/face/list:
+    post:
+      operationId: listRegisteredFaces
+      summary: List registered users for face recognition
+      tags: [Vision-Face]
+      responses:
+        '200':
+          description: Registered users
+  /v1/vision/face/register:
+    post:
+      operationId: registerFace
+      summary: Register face images for a user
+      tags: [Vision-Face]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [userid, image]
+              properties:
+                userid:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Registration result
+  /v1/vision/face/delete:
+    post:
+      operationId: deleteFace
+      summary: Remove a registered user
+      tags: [Vision-Face]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [userid]
+              properties:
+                userid:
+                  type: string
+      responses:
+        '200':
+          description: Deletion result
+  /v1/vision/face/recognize:
+    post:
+      operationId: recognizeFaces
+      summary: Identify faces in an image against the registered set
+      tags: [Vision-Face]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Recognition result
+  /v1/vision/alpr:
+    post:
+      operationId: readLicensePlate
+      summary: Detect and read license plates
+      tags: [Vision-ALPR]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [upload]
+              properties:
+                upload:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ALPR result
+  /v1/image/alpr:
+    post:
+      operationId: readLicensePlateLegacy
+      summary: Legacy ALPR route (deprecated alias of /v1/vision/alpr)
+      deprecated: true
+      tags: [Vision-ALPR]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [upload]
+              properties:
+                upload:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ALPR result
+  /v1/image/removebackground:
+    post:
+      operationId: removeBackground
+      summary: Remove the background from an image
+      tags: [Image-Processing]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                use_alphamatting:
+                  type: boolean
+      responses:
+        '200':
+          description: Image with background removed
+  /v1/image/cartoonise:
+    post:
+      operationId: cartoonise
+      summary: Convert an image to anime/cartoon style
+      tags: [Image-Processing]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Cartoonised image
+  /v1/image/portraitfilter:
+    post:
+      operationId: portraitFilter
+      summary: Apply a portrait/background-blur effect
+      tags: [Image-Processing]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                strength:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Filtered image
+  /v1/image/superresolution:
+    post:
+      operationId: superResolution
+      summary: Upscale an image
+      tags: [Image-Processing]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Upscaled image
+  /v1/sound/classify:
+    post:
+      operationId: classifySound
+      summary: Classify a sound file
+      tags: [Audio]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [sound]
+              properties:
+                sound:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Sound classification result
+  /v1/text/sentiment:
+    post:
+      operationId: analyzeSentiment
+      summary: Sentiment analysis
+      tags: [Text]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Sentiment result
+  /v1/text/summarize:
+    post:
+      operationId: summarizeText
+      summary: Summarize text
+      tags: [Text]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text:
+                  type: string
+                num_sentences:
+                  type: integer
+      responses:
+        '200':
+          description: Summary
+  /v1/train/create_dataset:
+    post:
+      operationId: createTrainingDataset
+      summary: Create a custom training dataset
+      tags: [Training]
+      responses:
+        '200':
+          description: Dataset metadata
+  /v1/train/train_model:
+    post:
+      operationId: trainModel
+      summary: Start YOLOv5 model training
+      tags: [Training]
+      responses:
+        '200':
+          description: Training job started
+  /v1/train/status:
+    post:
+      operationId: getTrainingStatus
+      summary: Check training progress
+      tags: [Training]
+      responses:
+        '200':
+          description: Training status
+  /v1/train/cancel:
+    post:
+      operationId: cancelTraining
+      summary: Stop a running training job
+      tags: [Training]
+      responses:
+        '200':
+          description: Cancellation result
+  /v1/train/get_model:
+    post:
+      operationId: getTrainedModel
+      summary: Retrieve a trained model
+      tags: [Training]
+      responses:
+        '200':
+          description: Model artifact
+  /v1/train/get_dataset:
+    post:
+      operationId: getTrainingDataset
+      summary: Retrieve a training dataset
+      tags: [Training]
+      responses:
+        '200':
+          description: Dataset
+components:
+  securitySchemes:
+    none:
+      type: apiKey
+      in: header
+      name: X-Disabled
+      description: >-
+        CodeProject.AI Server runs locally and does not require authentication
+        by default. Operators are expected to keep the service on a private
+        network or behind their own reverse proxy.

@@ -1,0 +1,213 @@
+# Naftiko capabilities profile for CodeProject.
+# Capabilities span the public CodeProject community REST API (articles,
+# forum messages, questions, authenticated user data) and the self-hosted
+# CodeProject.AI Server (vision, face, ALPR, image processing, audio,
+# text, training).
+provider: codeproject
+name: CodeProject
+description: >-
+  CodeProject community REST API for articles, forums, and Q&A, plus the
+  self-hosted CodeProject.AI Server for computer vision, face recognition,
+  license-plate reading, image processing, audio, text, and YOLO training.
+capabilities:
+  - id: codeproject.articles.list
+    name: List articles
+    description: List the latest CodeProject articles, blogs, and tips with rating filter.
+    api: codeproject:codeproject-api
+    inputs:
+      - page
+      - minRating
+    outputs:
+      - articles
+
+  - id: codeproject.articles.get
+    name: Get article
+    description: Retrieve a single CodeProject article.
+    api: codeproject:codeproject-api
+    inputs:
+      - id
+    outputs:
+      - article
+
+  - id: codeproject.forums.list-messages
+    name: List forum messages
+    description: List the latest messages for a forum.
+    api: codeproject:codeproject-api
+    inputs:
+      - forumId
+      - page
+    outputs:
+      - messages
+
+  - id: codeproject.questions.list
+    name: List Q&A questions
+    description: List CodeProject Q&A questions filtered by new, active, or unanswered.
+    api: codeproject:codeproject-api
+    inputs:
+      - filter
+      - page
+    outputs:
+      - questions
+
+  - id: codeproject.my.profile
+    name: Get my profile
+    description: Get the authenticated user's profile.
+    api: codeproject:codeproject-api
+    inputs: []
+    outputs:
+      - profile
+
+  - id: codeproject.my.reputation
+    name: Get my reputation
+    description: Get the authenticated user's reputation.
+    api: codeproject:codeproject-api
+    inputs: []
+    outputs:
+      - reputation
+
+  - id: codeproject.my.notifications
+    name: List my notifications
+    description: List the authenticated user's notifications.
+    api: codeproject:codeproject-api
+    inputs: []
+    outputs:
+      - notifications
+
+  - id: codeproject.ai.detect-objects
+    name: Detect objects
+    description: Run YOLO-based object detection on an image.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image
+      - min_confidence
+    outputs:
+      - predictions
+
+  - id: codeproject.ai.detect-custom
+    name: Run custom detection model
+    description: Run a custom YOLO model against an image.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - modelName
+      - image
+      - min_confidence
+    outputs:
+      - predictions
+
+  - id: codeproject.ai.scene
+    name: Classify scene
+    description: Classify the scene depicted in an image (365 scene types).
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image
+    outputs:
+      - label
+      - confidence
+
+  - id: codeproject.ai.face-detect
+    name: Detect faces
+    description: Detect faces in an image.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image
+      - min_confidence
+    outputs:
+      - predictions
+
+  - id: codeproject.ai.face-register
+    name: Register face
+    description: Register one or more face images for a user identifier.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - userid
+      - image
+    outputs:
+      - status
+
+  - id: codeproject.ai.face-recognize
+    name: Recognize faces
+    description: Identify faces in an image against the registered set.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image
+      - min_confidence
+    outputs:
+      - predictions
+
+  - id: codeproject.ai.face-match
+    name: Match two faces
+    description: Compare two face images for similarity.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image1
+      - image2
+    outputs:
+      - similarity
+
+  - id: codeproject.ai.alpr
+    name: Read license plate
+    description: Detect and read license plates in an image (ALPR).
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - upload
+    outputs:
+      - predictions
+
+  - id: codeproject.ai.remove-background
+    name: Remove background
+    description: Remove the background from an image.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image
+      - use_alphamatting
+    outputs:
+      - image
+
+  - id: codeproject.ai.super-resolution
+    name: Super-resolution
+    description: Upscale an image's resolution.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - image
+    outputs:
+      - image
+
+  - id: codeproject.ai.classify-sound
+    name: Classify sound
+    description: Classify a WAV sound file.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - sound
+      - min_confidence
+    outputs:
+      - predictions
+
+  - id: codeproject.ai.sentiment
+    name: Analyze sentiment
+    description: Run sentiment analysis on text.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - text
+    outputs:
+      - sentiment
+      - confidence
+
+  - id: codeproject.ai.summarize
+    name: Summarize text
+    description: Generate a short summary of input text.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - text
+      - num_sentences
+    outputs:
+      - summary
+
+  - id: codeproject.ai.train-model
+    name: Train YOLO model
+    description: Start training a custom YOLOv5 model on a registered dataset.
+    api: codeproject:codeproject-ai-server
+    inputs:
+      - dataset
+      - hyperparameters
+    outputs:
+      - jobId
