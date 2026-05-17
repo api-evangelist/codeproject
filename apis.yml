@@ -18,7 +18,7 @@ tags:
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
-x-type: company
+kind: company
 created: '2025-01-01'
 modified: '2026-04-26'
 position: Consumer
@@ -180,7 +180,7 @@ common:
     name: GitHub Organization
     type: GitHub
   - url: json-ld/codeproject-context.jsonld
-    type: JSON-LD
+    type: JSONLD
   - url: rules/codeproject-rules.yml
     type: Spectral
   - url: capabilities/codeproject-capabilities.yml
