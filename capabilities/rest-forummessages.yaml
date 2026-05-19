@@ -1,0 +1,84 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject REST API — ForumMessages
+  description: 'CodeProject REST API — ForumMessages. 1 operations. Lead operation: List the latest messages for a forum.
+    Self-contained Naftiko capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - ForumMessages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-forummessages
+    baseUri: https://api.codeproject.com
+    description: CodeProject REST API — ForumMessages business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-ForumMessages-forumId
+      path: /v1/ForumMessages/{forumId}
+      operations:
+      - name: listforummessages
+        method: GET
+        description: List the latest messages for a forum
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: forumId
+          in: path
+          type: integer
+          required: true
+        - name: page
+          in: query
+          type: integer
+    authentication:
+      type: bearer
+      token: '{{env.CODEPROJECT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: rest-forummessages-rest
+    port: 8080
+    description: REST adapter for CodeProject REST API — ForumMessages. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/forummessages/{forumid}
+      name: v1-forummessages-forumid
+      description: REST surface for v1-ForumMessages-forumId.
+      operations:
+      - method: GET
+        name: listforummessages
+        description: List the latest messages for a forum
+        call: rest-forummessages.listforummessages
+        with:
+          forumId: rest.forumId
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-forummessages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject REST API — ForumMessages. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-latest-messages-forum
+      description: List the latest messages for a forum
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-forummessages.listforummessages
+      with:
+        forumId: tools.forumId
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.

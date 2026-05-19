@@ -1,0 +1,208 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject.AI Server API — Image-Processing
+  description: 'CodeProject.AI Server API — Image-Processing. 4 operations. Lead operation: Convert an image to anime/cartoon
+    style. Self-contained Naftiko capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - Image-Processing
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ai-server-image-processing
+    baseUri: http://localhost:32168
+    description: CodeProject.AI Server API — Image-Processing business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-image-cartoonise
+      path: /v1/image/cartoonise
+      operations:
+      - name: cartoonise
+        method: POST
+        description: Convert an image to anime/cartoon style
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-image-portraitfilter
+      path: /v1/image/portraitfilter
+      operations:
+      - name: portraitfilter
+        method: POST
+        description: Apply a portrait/background-blur effect
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-image-removebackground
+      path: /v1/image/removebackground
+      operations:
+      - name: removebackground
+        method: POST
+        description: Remove the background from an image
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-image-superresolution
+      path: /v1/image/superresolution
+      operations:
+      - name: superresolution
+        method: POST
+        description: Upscale an image
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: X-Disabled
+      value: '{{env.CODEPROJECT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: ai-server-image-processing-rest
+    port: 8080
+    description: REST adapter for CodeProject.AI Server API — Image-Processing. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/image/cartoonise
+      name: v1-image-cartoonise
+      description: REST surface for v1-image-cartoonise.
+      operations:
+      - method: POST
+        name: cartoonise
+        description: Convert an image to anime/cartoon style
+        call: ai-server-image-processing.cartoonise
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/image/portraitfilter
+      name: v1-image-portraitfilter
+      description: REST surface for v1-image-portraitfilter.
+      operations:
+      - method: POST
+        name: portraitfilter
+        description: Apply a portrait/background-blur effect
+        call: ai-server-image-processing.portraitfilter
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/image/removebackground
+      name: v1-image-removebackground
+      description: REST surface for v1-image-removebackground.
+      operations:
+      - method: POST
+        name: removebackground
+        description: Remove the background from an image
+        call: ai-server-image-processing.removebackground
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/image/superresolution
+      name: v1-image-superresolution
+      description: REST surface for v1-image-superresolution.
+      operations:
+      - method: POST
+        name: superresolution
+        description: Upscale an image
+        call: ai-server-image-processing.superresolution
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ai-server-image-processing-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject.AI Server API — Image-Processing. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: convert-image-anime-cartoon-style
+      description: Convert an image to anime/cartoon style
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-image-processing.cartoonise
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apply-portrait-background-blur-effect
+      description: Apply a portrait/background-blur effect
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-image-processing.portraitfilter
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: remove-background-image
+      description: Remove the background from an image
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-image-processing.removebackground
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upscale-image
+      description: Upscale an image
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-image-processing.superresolution
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

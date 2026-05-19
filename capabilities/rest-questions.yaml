@@ -1,0 +1,125 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject REST API — Questions
+  description: 'CodeProject REST API — Questions. 2 operations. Lead operation: List Q&A questions. Self-contained Naftiko
+    capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - Questions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-questions
+    baseUri: https://api.codeproject.com
+    description: CodeProject REST API — Questions business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-Questions
+      path: /v1/Questions
+      operations:
+      - name: listquestions
+        method: GET
+        description: List Q&A questions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: filter
+          in: query
+          type: string
+          description: Filter set - new, active, unanswered.
+        - name: page
+          in: query
+          type: integer
+    - name: v1-Questions-id
+      path: /v1/Questions/{id}
+      operations:
+      - name: getquestion
+        method: GET
+        description: Get a question and its answers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.CODEPROJECT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: rest-questions-rest
+    port: 8080
+    description: REST adapter for CodeProject REST API — Questions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/questions
+      name: v1-questions
+      description: REST surface for v1-Questions.
+      operations:
+      - method: GET
+        name: listquestions
+        description: List Q&A questions
+        call: rest-questions.listquestions
+        with:
+          filter: rest.filter
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/questions/{id}
+      name: v1-questions-id
+      description: REST surface for v1-Questions-id.
+      operations:
+      - method: GET
+        name: getquestion
+        description: Get a question and its answers
+        call: rest-questions.getquestion
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-questions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject REST API — Questions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-q-a-questions
+      description: List Q&A questions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-questions.listquestions
+      with:
+        filter: tools.filter
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-question-and-its-answers
+      description: Get a question and its answers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-questions.getquestion
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.

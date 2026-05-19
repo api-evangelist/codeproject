@@ -1,0 +1,282 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject.AI Server API — Vision-Face
+  description: 'CodeProject.AI Server API — Vision-Face. 6 operations. Lead operation: Detect faces in an image. Self-contained
+    Naftiko capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - Vision-Face
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ai-server-vision-face
+    baseUri: http://localhost:32168
+    description: CodeProject.AI Server API — Vision-Face business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-vision-face
+      path: /v1/vision/face
+      operations:
+      - name: detectfaces
+        method: POST
+        description: Detect faces in an image
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-vision-face-delete
+      path: /v1/vision/face/delete
+      operations:
+      - name: deleteface
+        method: POST
+        description: Remove a registered user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-vision-face-list
+      path: /v1/vision/face/list
+      operations:
+      - name: listregisteredfaces
+        method: POST
+        description: List registered users for face recognition
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-vision-face-match
+      path: /v1/vision/face/match
+      operations:
+      - name: matchfaces
+        method: POST
+        description: Compare two face images for similarity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-vision-face-recognize
+      path: /v1/vision/face/recognize
+      operations:
+      - name: recognizefaces
+        method: POST
+        description: Identify faces in an image against the registered set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-vision-face-register
+      path: /v1/vision/face/register
+      operations:
+      - name: registerface
+        method: POST
+        description: Register face images for a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: X-Disabled
+      value: '{{env.CODEPROJECT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: ai-server-vision-face-rest
+    port: 8080
+    description: REST adapter for CodeProject.AI Server API — Vision-Face. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/vision/face
+      name: v1-vision-face
+      description: REST surface for v1-vision-face.
+      operations:
+      - method: POST
+        name: detectfaces
+        description: Detect faces in an image
+        call: ai-server-vision-face.detectfaces
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/face/delete
+      name: v1-vision-face-delete
+      description: REST surface for v1-vision-face-delete.
+      operations:
+      - method: POST
+        name: deleteface
+        description: Remove a registered user
+        call: ai-server-vision-face.deleteface
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/face/list
+      name: v1-vision-face-list
+      description: REST surface for v1-vision-face-list.
+      operations:
+      - method: POST
+        name: listregisteredfaces
+        description: List registered users for face recognition
+        call: ai-server-vision-face.listregisteredfaces
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/face/match
+      name: v1-vision-face-match
+      description: REST surface for v1-vision-face-match.
+      operations:
+      - method: POST
+        name: matchfaces
+        description: Compare two face images for similarity
+        call: ai-server-vision-face.matchfaces
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/face/recognize
+      name: v1-vision-face-recognize
+      description: REST surface for v1-vision-face-recognize.
+      operations:
+      - method: POST
+        name: recognizefaces
+        description: Identify faces in an image against the registered set
+        call: ai-server-vision-face.recognizefaces
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/face/register
+      name: v1-vision-face-register
+      description: REST surface for v1-vision-face-register.
+      operations:
+      - method: POST
+        name: registerface
+        description: Register face images for a user
+        call: ai-server-vision-face.registerface
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ai-server-vision-face-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject.AI Server API — Vision-Face. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: detect-faces-image
+      description: Detect faces in an image
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-face.detectfaces
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: remove-registered-user
+      description: Remove a registered user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-face.deleteface
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-registered-users-face-recognition
+      description: List registered users for face recognition
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-face.listregisteredfaces
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: compare-two-face-images-similarity
+      description: Compare two face images for similarity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-face.matchfaces
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: identify-faces-image-against-registered
+      description: Identify faces in an image against the registered set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-face.recognizefaces
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: register-face-images-user
+      description: Register face images for a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-face.registerface
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

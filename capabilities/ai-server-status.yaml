@@ -1,0 +1,168 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject.AI Server API — Status
+  description: 'CodeProject.AI Server API — Status. 4 operations. Lead operation: Retrieve server logs. Self-contained Naftiko
+    capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - Status
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ai-server-status
+    baseUri: http://localhost:32168
+    description: CodeProject.AI Server API — Status business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-status-logs
+      path: /v1/status/logs
+      operations:
+      - name: getserverlogs
+        method: POST
+        description: Retrieve server logs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-status-ping
+      path: /v1/status/ping
+      operations:
+      - name: pingserver
+        method: POST
+        description: Server health check
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-status-updateavailable
+      path: /v1/status/updateavailable
+      operations:
+      - name: checkforupdates
+        method: POST
+        description: Check whether a new server version is available
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-status-version
+      path: /v1/status/version
+      operations:
+      - name: getserverversion
+        method: POST
+        description: Get server version
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-Disabled
+      value: '{{env.CODEPROJECT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: ai-server-status-rest
+    port: 8080
+    description: REST adapter for CodeProject.AI Server API — Status. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/status/logs
+      name: v1-status-logs
+      description: REST surface for v1-status-logs.
+      operations:
+      - method: POST
+        name: getserverlogs
+        description: Retrieve server logs
+        call: ai-server-status.getserverlogs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/status/ping
+      name: v1-status-ping
+      description: REST surface for v1-status-ping.
+      operations:
+      - method: POST
+        name: pingserver
+        description: Server health check
+        call: ai-server-status.pingserver
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/status/updateavailable
+      name: v1-status-updateavailable
+      description: REST surface for v1-status-updateavailable.
+      operations:
+      - method: POST
+        name: checkforupdates
+        description: Check whether a new server version is available
+        call: ai-server-status.checkforupdates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/status/version
+      name: v1-status-version
+      description: REST surface for v1-status-version.
+      operations:
+      - method: POST
+        name: getserverversion
+        description: Get server version
+        call: ai-server-status.getserverversion
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ai-server-status-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject.AI Server API — Status. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: retrieve-server-logs
+      description: Retrieve server logs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-status.getserverlogs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: server-health-check
+      description: Server health check
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-status.pingserver
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: check-whether-new-server-version
+      description: Check whether a new server version is available
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-status.checkforupdates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-server-version
+      description: Get server version
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-status.getserverversion
+      outputParameters:
+      - type: object
+        mapping: $.

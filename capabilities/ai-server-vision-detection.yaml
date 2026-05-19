@@ -1,0 +1,162 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject.AI Server API — Vision-Detection
+  description: 'CodeProject.AI Server API — Vision-Detection. 3 operations. Lead operation: List installed custom detection
+    models. Self-contained Naftiko capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - Vision-Detection
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ai-server-vision-detection
+    baseUri: http://localhost:32168
+    description: CodeProject.AI Server API — Vision-Detection business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-vision-custom-list
+      path: /v1/vision/custom/list
+      operations:
+      - name: listcustommodels
+        method: POST
+        description: List installed custom detection models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-vision-custom-modelName
+      path: /v1/vision/custom/{modelName}
+      operations:
+      - name: detectcustom
+        method: POST
+        description: Run a custom-model detection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: modelName
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-vision-detection
+      path: /v1/vision/detection
+      operations:
+      - name: detectobjects
+        method: POST
+        description: Detect objects in an image
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: X-Disabled
+      value: '{{env.CODEPROJECT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: ai-server-vision-detection-rest
+    port: 8080
+    description: REST adapter for CodeProject.AI Server API — Vision-Detection. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/vision/custom/list
+      name: v1-vision-custom-list
+      description: REST surface for v1-vision-custom-list.
+      operations:
+      - method: POST
+        name: listcustommodels
+        description: List installed custom detection models
+        call: ai-server-vision-detection.listcustommodels
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/custom/{modelname}
+      name: v1-vision-custom-modelname
+      description: REST surface for v1-vision-custom-modelName.
+      operations:
+      - method: POST
+        name: detectcustom
+        description: Run a custom-model detection
+        call: ai-server-vision-detection.detectcustom
+        with:
+          modelName: rest.modelName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/vision/detection
+      name: v1-vision-detection
+      description: REST surface for v1-vision-detection.
+      operations:
+      - method: POST
+        name: detectobjects
+        description: Detect objects in an image
+        call: ai-server-vision-detection.detectobjects
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ai-server-vision-detection-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject.AI Server API — Vision-Detection. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-installed-custom-detection-models
+      description: List installed custom detection models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-detection.listcustommodels
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: run-custom-model-detection
+      description: Run a custom-model detection
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-detection.detectcustom
+      with:
+        modelName: tools.modelName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: detect-objects-image
+      description: Detect objects in an image
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-vision-detection.detectobjects
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

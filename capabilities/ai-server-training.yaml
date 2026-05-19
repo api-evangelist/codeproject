@@ -1,0 +1,232 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: CodeProject.AI Server API — Training
+  description: 'CodeProject.AI Server API — Training. 6 operations. Lead operation: Stop a running training job. Self-contained
+    Naftiko capability covering one Codeproject business surface.'
+  tags:
+  - Codeproject
+  - Training
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CODEPROJECT_API_KEY: CODEPROJECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ai-server-training
+    baseUri: http://localhost:32168
+    description: CodeProject.AI Server API — Training business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-train-cancel
+      path: /v1/train/cancel
+      operations:
+      - name: canceltraining
+        method: POST
+        description: Stop a running training job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-train-create_dataset
+      path: /v1/train/create_dataset
+      operations:
+      - name: createtrainingdataset
+        method: POST
+        description: Create a custom training dataset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-train-get_dataset
+      path: /v1/train/get_dataset
+      operations:
+      - name: gettrainingdataset
+        method: POST
+        description: Retrieve a training dataset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-train-get_model
+      path: /v1/train/get_model
+      operations:
+      - name: gettrainedmodel
+        method: POST
+        description: Retrieve a trained model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-train-status
+      path: /v1/train/status
+      operations:
+      - name: gettrainingstatus
+        method: POST
+        description: Check training progress
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-train-train_model
+      path: /v1/train/train_model
+      operations:
+      - name: trainmodel
+        method: POST
+        description: Start YOLOv5 model training
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-Disabled
+      value: '{{env.CODEPROJECT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: ai-server-training-rest
+    port: 8080
+    description: REST adapter for CodeProject.AI Server API — Training. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/v1/train/cancel
+      name: v1-train-cancel
+      description: REST surface for v1-train-cancel.
+      operations:
+      - method: POST
+        name: canceltraining
+        description: Stop a running training job
+        call: ai-server-training.canceltraining
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/train/create-dataset
+      name: v1-train-create-dataset
+      description: REST surface for v1-train-create_dataset.
+      operations:
+      - method: POST
+        name: createtrainingdataset
+        description: Create a custom training dataset
+        call: ai-server-training.createtrainingdataset
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/train/get-dataset
+      name: v1-train-get-dataset
+      description: REST surface for v1-train-get_dataset.
+      operations:
+      - method: POST
+        name: gettrainingdataset
+        description: Retrieve a training dataset
+        call: ai-server-training.gettrainingdataset
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/train/get-model
+      name: v1-train-get-model
+      description: REST surface for v1-train-get_model.
+      operations:
+      - method: POST
+        name: gettrainedmodel
+        description: Retrieve a trained model
+        call: ai-server-training.gettrainedmodel
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/train/status
+      name: v1-train-status
+      description: REST surface for v1-train-status.
+      operations:
+      - method: POST
+        name: gettrainingstatus
+        description: Check training progress
+        call: ai-server-training.gettrainingstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/train/train-model
+      name: v1-train-train-model
+      description: REST surface for v1-train-train_model.
+      operations:
+      - method: POST
+        name: trainmodel
+        description: Start YOLOv5 model training
+        call: ai-server-training.trainmodel
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ai-server-training-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for CodeProject.AI Server API — Training. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: stop-running-training-job
+      description: Stop a running training job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-training.canceltraining
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-custom-training-dataset
+      description: Create a custom training dataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-training.createtrainingdataset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-training-dataset
+      description: Retrieve a training dataset
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-training.gettrainingdataset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-trained-model
+      description: Retrieve a trained model
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-training.gettrainedmodel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: check-training-progress
+      description: Check training progress
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ai-server-training.gettrainingstatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: start-yolov5-model-training
+      description: Start YOLOv5 model training
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ai-server-training.trainmodel
+      outputParameters:
+      - type: object
+        mapping: $.
