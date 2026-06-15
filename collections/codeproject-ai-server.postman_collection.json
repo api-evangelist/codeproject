@@ -1,0 +1,2504 @@
+{
+  "item": [
+    {
+      "id": "be94581f-7fdf-4c74-93a1-bec5a6499e74",
+      "name": "Status",
+      "description": {
+        "content": "Server status, version, logs, and update checks.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d4eecb14-53aa-4f58-8fd8-403f0d11def8",
+          "name": "Server health check",
+          "request": {
+            "name": "Server health check",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "509a7f21-657e-405b-8d66-ad40fd315c0f",
+              "name": "Server reachable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "ping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45dabc72-832d-4bf4-b865-42a0e6403bb1",
+          "name": "Get server version",
+          "request": {
+            "name": "Get server version",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f0900379-25f4-449e-ae55-53a8646ae5ac",
+              "name": "Version information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1ad8dbc-3c03-47f7-aad1-4cf62c9c3700",
+          "name": "Retrieve server logs",
+          "request": {
+            "name": "Retrieve server logs",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "288bdabe-8d95-4f88-bd36-152821ebb9a2",
+              "name": "Log entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a216430c-a2ca-4bb3-99a0-2e9ca255bdbc",
+          "name": "Check whether a new server version is available",
+          "request": {
+            "name": "Check whether a new server version is available",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "updateavailable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdd78023-e40e-4fd5-aa2d-014dd5515fe8",
+              "name": "Update availability status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "updateavailable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "42a0f989-bc86-4d41-bdfb-3c7de3cd370a",
+      "name": "Vision-Detection",
+      "description": {
+        "content": "Object detection across general and custom YOLO models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6cfd37be-e3fc-4222-9c84-2f5f01b028ad",
+          "name": "Detect objects in an image",
+          "request": {
+            "name": "Detect objects in an image",
+            "description": {
+              "content": "YOLO-based object detection across 80 default classes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "detection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "0.4",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d774716a-53d2-4c83-a145-3a20a0e7fe38",
+              "name": "Detection results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "detection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "0.4",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9340767-b592-45b7-bee0-5d38693dacff",
+          "name": "Run a custom-model detection",
+          "request": {
+            "name": "Run a custom-model detection",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "custom",
+                ":modelName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2baefdb2-df15-4543-88c5-9bea809baa02",
+              "name": "Detection results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "custom",
+                    ":modelName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "type": "file"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec2559e6-fe38-4d44-ab1d-2d17a2344054",
+          "name": "List installed custom detection models",
+          "request": {
+            "name": "List installed custom detection models",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "custom",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ae4ac5f-2342-4cf3-8d1c-cdfa3e44c688",
+              "name": "Custom model list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "custom",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "78caf487-939d-4070-9e7a-5d7bf4583c08",
+      "name": "Vision-Scene",
+      "description": {
+        "content": "Scene classification.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7115eca5-1409-4621-8a3b-6f05a6f6f2ca",
+          "name": "Classify the scene depicted in an image",
+          "request": {
+            "name": "Classify the scene depicted in an image",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "scene"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e7ae5701-10e1-4f57-b2ac-66587d4e4760",
+              "name": "Scene classification result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "scene"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "type": "file"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "21a4061b-50ed-4e3f-8915-814e1ed1508d",
+      "name": "Vision-Face",
+      "description": {
+        "content": "Face detection, comparison, registration, and recognition.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9cc075d-7acb-4d08-9017-f01ee00bf3d2",
+          "name": "Detect faces in an image",
+          "request": {
+            "name": "Detect faces in an image",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a9b2b6ed-ca5c-4685-b4b3-8ab16f52b594",
+              "name": "Face detection result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af99e67c-9c2d-4da7-b581-24d4994ccf4f",
+          "name": "Compare two face images for similarity",
+          "request": {
+            "name": "Compare two face images for similarity",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image1",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "image2",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7d84026b-07dc-41a4-8670-4264323e9b26",
+              "name": "Match result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image1",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image2",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcb0854e-be6e-4eab-ba88-1695dc2bcdac",
+          "name": "List registered users for face recognition",
+          "request": {
+            "name": "List registered users for face recognition",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "205b1746-7400-4faa-ac6d-88b448af69f8",
+              "name": "Registered users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c03e407-ee90-436e-a73f-648e63212e5a",
+          "name": "Register face images for a user",
+          "request": {
+            "name": "Register face images for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "userid",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3b2bc8d4-2725-41d6-ac65-5eef1d87e42c",
+              "name": "Registration result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "userid",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18799212-b675-4e24-a3bf-ef33b5ff8849",
+          "name": "Remove a registered user",
+          "request": {
+            "name": "Remove a registered user",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "userid",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "22a8609f-9e80-46aa-a47d-90b4a49f1345",
+              "name": "Deletion result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "userid",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d0550f7-e377-420e-b7c3-a605736977e1",
+          "name": "Identify faces in an image against the registered set",
+          "request": {
+            "name": "Identify faces in an image against the registered set",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "recognize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "55e239b6-c5b6-49a0-a7fb-a599ec8da831",
+              "name": "Recognition result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "recognize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "type": "file"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b21a84d6-ae8e-435f-aa0a-812426ed45f0",
+      "name": "Vision-ALPR",
+      "description": {
+        "content": "Automatic license-plate recognition.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6aa44172-b5ef-445d-8e7a-cde4b183e16d",
+          "name": "Detect and read license plates",
+          "request": {
+            "name": "Detect and read license plates",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "alpr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "upload",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "51f61673-d841-4cee-8cd3-4580fc69514b",
+              "name": "ALPR result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "alpr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "upload",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a34251d-d818-475d-b4f6-86c5c1592dca",
+          "name": "Legacy ALPR route (deprecated alias of /v1/vision/alpr)",
+          "request": {
+            "name": "Legacy ALPR route (deprecated alias of /v1/vision/alpr)",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "image",
+                "alpr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "upload",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4d39a60d-0144-460f-9363-e2a4a292c7b4",
+              "name": "ALPR result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image",
+                    "alpr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "upload",
+                      "type": "file"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "abc73bb4-64b0-4fe5-be1a-878b8653b367",
+      "name": "Image-Processing",
+      "description": {
+        "content": "Background removal, cartoonise, portrait filter, super-resolution.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "66b580b7-8c8b-4ac2-9c66-6182d9e2e5be",
+          "name": "Remove the background from an image",
+          "request": {
+            "name": "Remove the background from an image",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "image",
+                "removebackground"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "use_alphamatting",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "24605ab1-c4d2-4f35-a5aa-93435c5732d5",
+              "name": "Image with background removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image",
+                    "removebackground"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "use_alphamatting",
+                      "value": "<boolean>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b68fb5ca-2bf1-4f4a-a599-a59f0ff5d9f1",
+          "name": "Convert an image to anime/cartoon style",
+          "request": {
+            "name": "Convert an image to anime/cartoon style",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "image",
+                "cartoonise"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6b5bc896-8132-4970-b534-f9d7bba6145e",
+              "name": "Cartoonised image",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image",
+                    "cartoonise"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a071017a-dd66-4df1-9e7b-659cc01b59d4",
+          "name": "Apply a portrait/background-blur effect",
+          "request": {
+            "name": "Apply a portrait/background-blur effect",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "image",
+                "portraitfilter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "strength",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "642a772e-f978-49cf-b30a-5a69b860f3a5",
+              "name": "Filtered image",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image",
+                    "portraitfilter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "strength",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4bd57434-3779-451e-8e58-bd711d8c05ae",
+          "name": "Upscale an image",
+          "request": {
+            "name": "Upscale an image",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "image",
+                "superresolution"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e5a8fb4c-1490-4a4c-a04e-cfad1f9797de",
+              "name": "Upscaled image",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "image",
+                    "superresolution"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "type": "file"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "69889f75-0011-49ba-917f-f96edf60e4bc",
+      "name": "Audio",
+      "description": {
+        "content": "Sound classification.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f80e1031-f884-47b7-9583-39f7b96042c2",
+          "name": "Classify a sound file",
+          "request": {
+            "name": "Classify a sound file",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "sound",
+                "classify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "sound",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e2076ef1-fef3-49cd-81bd-e18f4ef53001",
+              "name": "Sound classification result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "sound",
+                    "classify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "sound",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3440bd81-8560-45c6-8af1-89b65333a61e",
+      "name": "Text",
+      "description": {
+        "content": "Sentiment analysis and summarization.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95583674-8d06-498b-aebc-2f9991b4aa6b",
+          "name": "Sentiment analysis",
+          "request": {
+            "name": "Sentiment analysis",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "text",
+                "sentiment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "text",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b796c232-afd6-43c8-aa45-7e9c12da5c35",
+              "name": "Sentiment result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "text",
+                    "sentiment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "text",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa6d1ac6-3ace-4c70-b8b6-e0296ab36eac",
+          "name": "Summarize text",
+          "request": {
+            "name": "Summarize text",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "text",
+                "summarize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "text",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "num_sentences",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6792767f-9fae-48c2-8f75-4a51922b3f6a",
+              "name": "Summary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "text",
+                    "summarize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "text",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "num_sentences",
+                      "value": "<integer>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d4c8a589-ef26-43fb-8cb2-7dd052d8b73c",
+      "name": "Training",
+      "description": {
+        "content": "Custom YOLO dataset and model training lifecycle.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5831a5a2-5b0c-40db-bf2d-0f7f2f093c91",
+          "name": "Create a custom training dataset",
+          "request": {
+            "name": "Create a custom training dataset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "create_dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5200e2f3-7e0c-49a7-9b8c-6f8c509fd158",
+              "name": "Dataset metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "create_dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "64f4fce9-60a9-4d7b-b9e6-0f6d04e23bb0",
+          "name": "Start YOLOv5 model training",
+          "request": {
+            "name": "Start YOLOv5 model training",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "train_model"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eed28aee-0b27-491a-8f0b-c36bfd50ae17",
+              "name": "Training job started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "train_model"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c86bd7f-2e6b-4e6f-8ad1-a9c1649d99b6",
+          "name": "Check training progress",
+          "request": {
+            "name": "Check training progress",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d69fa371-2fd0-459e-bde8-f5692b75a931",
+              "name": "Training status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f611d92a-d3d2-4656-bdd9-ec916840cc97",
+          "name": "Stop a running training job",
+          "request": {
+            "name": "Stop a running training job",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "497f2b76-0bf2-4b22-86f9-629bb5849dbf",
+              "name": "Cancellation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e10a6bb-0d9f-4df5-86f7-f22ecd14a459",
+          "name": "Retrieve a trained model",
+          "request": {
+            "name": "Retrieve a trained model",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "get_model"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "473d7486-962c-44a4-8981-87255c1959d9",
+              "name": "Model artifact",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "get_model"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d373979-5143-4216-9e29-fafc5645adad",
+          "name": "Retrieve a training dataset",
+          "request": {
+            "name": "Retrieve a training dataset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "get_dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d26002db-057a-4538-bc62-929711a7fc20",
+              "name": "Dataset",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "get_dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:32168",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "20a22b9f-c676-4757-9507-bae111b1c3ec",
+    "name": "CodeProject.AI Server API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.\n\nContact Support:\n Name: CodeProject.AI Server",
+      "type": "text/plain"
+    }
+  }
+}

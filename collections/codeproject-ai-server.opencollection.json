@@ -1,0 +1,628 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Status",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/ping"
+          },
+          "docs": "Server health check"
+        },
+        {
+          "info": {
+            "name": "Get server version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/version"
+          },
+          "docs": "Get server version"
+        },
+        {
+          "info": {
+            "name": "Retrieve server logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/logs"
+          },
+          "docs": "Retrieve server logs"
+        },
+        {
+          "info": {
+            "name": "Check whether a new server version is available",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/updateavailable"
+          },
+          "docs": "Check whether a new server version is available"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vision-Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect objects in an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/detection",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "YOLO-based object detection across 80 default classes."
+        },
+        {
+          "info": {
+            "name": "Run a custom-model detection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/custom/:modelName",
+            "params": [
+              {
+                "name": "modelName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Run a custom-model detection"
+        },
+        {
+          "info": {
+            "name": "List installed custom detection models",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/custom/list"
+          },
+          "docs": "List installed custom detection models"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vision-Scene",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Classify the scene depicted in an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/scene",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Classify the scene depicted in an image"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vision-Face",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect faces in an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Detect faces in an image"
+        },
+        {
+          "info": {
+            "name": "Compare two face images for similarity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/match",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image1",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "image2",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Compare two face images for similarity"
+        },
+        {
+          "info": {
+            "name": "List registered users for face recognition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/list"
+          },
+          "docs": "List registered users for face recognition"
+        },
+        {
+          "info": {
+            "name": "Register face images for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/register",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "userid",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Register face images for a user"
+        },
+        {
+          "info": {
+            "name": "Remove a registered user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/delete",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "userid",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Remove a registered user"
+        },
+        {
+          "info": {
+            "name": "Identify faces in an image against the registered set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/recognize",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Identify faces in an image against the registered set"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vision-ALPR",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect and read license plates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/alpr",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "upload",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Detect and read license plates"
+        },
+        {
+          "info": {
+            "name": "Legacy ALPR route (deprecated alias of /v1/vision/alpr)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/alpr",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "upload",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Legacy ALPR route (deprecated alias of /v1/vision/alpr)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Image-Processing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Remove the background from an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/removebackground",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "use_alphamatting",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Remove the background from an image"
+        },
+        {
+          "info": {
+            "name": "Convert an image to anime/cartoon style",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/cartoonise",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Convert an image to anime/cartoon style"
+        },
+        {
+          "info": {
+            "name": "Apply a portrait/background-blur effect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/portraitfilter",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "strength",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Apply a portrait/background-blur effect"
+        },
+        {
+          "info": {
+            "name": "Upscale an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/superresolution",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upscale an image"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Audio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Classify a sound file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/sound/classify",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "sound",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Classify a sound file"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Text",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sentiment analysis",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/text/sentiment",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "text",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Sentiment analysis"
+        },
+        {
+          "info": {
+            "name": "Summarize text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/text/summarize",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "text",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "num_sentences",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Summarize text"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Training",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a custom training dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/create_dataset"
+          },
+          "docs": "Create a custom training dataset"
+        },
+        {
+          "info": {
+            "name": "Start YOLOv5 model training",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/train_model"
+          },
+          "docs": "Start YOLOv5 model training"
+        },
+        {
+          "info": {
+            "name": "Check training progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/status"
+          },
+          "docs": "Check training progress"
+        },
+        {
+          "info": {
+            "name": "Stop a running training job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/cancel"
+          },
+          "docs": "Stop a running training job"
+        },
+        {
+          "info": {
+            "name": "Retrieve a trained model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/get_model"
+          },
+          "docs": "Retrieve a trained model"
+        },
+        {
+          "info": {
+            "name": "Retrieve a training dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/get_dataset"
+          },
+          "docs": "Retrieve a training dataset"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,319 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject REST API",
+    "version": "1.0-beta"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.codeproject.com/Token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the latest articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/Articles",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minRating",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the latest articles, technical blogs, and tips & tricks (rating >= 3.0), ordered by modified date."
+        },
+        {
+          "info": {
+            "name": "Get a single article",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/Articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single article"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ForumMessages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the latest messages for a forum",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/ForumMessages/:forumId",
+            "params": [
+              {
+                "name": "forumId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the latest messages for a forum"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Questions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Q&A questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/Questions",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter set - new, active, unanswered."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Q&A questions"
+        },
+        {
+          "info": {
+            "name": "Get a question and its answers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/Questions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a question and its answers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "My",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the authenticated user's profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Profile",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the authenticated user's profile"
+        },
+        {
+          "info": {
+            "name": "Get the authenticated user's reputation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Reputation",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the authenticated user's reputation"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Articles",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List the authenticated user's articles"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's answers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Answers",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List the authenticated user's answers"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's blog posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Blog",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List the authenticated user's blog posts"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's bookmarks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Bookmarks",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List the authenticated user's bookmarks"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Notifications",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List the authenticated user's notifications"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's tips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.codeproject.com/v1/My/Tips",
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.codeproject.com/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List the authenticated user's tips"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
