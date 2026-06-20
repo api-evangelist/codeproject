@@ -16,7 +16,7 @@ tags:
   - Software Development
   - Tutorials
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 kind: company
 created: '2025-01-01'
@@ -42,7 +42,7 @@ apis:
       - Q&A
       - Read-Only
     type: REST
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.codeproject.com
     humanURL: https://api.codeproject.com/Help
     description: >-
@@ -94,7 +94,7 @@ apis:
       - Text
       - Training
     type: REST
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: http://localhost:32168
     humanURL: https://www.codeproject.com/AI/
     description: >-
