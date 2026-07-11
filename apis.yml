@@ -135,6 +135,8 @@ apis:
       - Edge AI on Raspberry Pi and Jetson devices
       - Local image moderation and content classification
 common:
+  - type: OAuthScopes
+    url: scopes/codeproject-scopes.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/the-code-project
   - url: https://www.codeproject.com/
