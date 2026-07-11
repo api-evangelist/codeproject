@@ -135,6 +135,10 @@ apis:
       - Edge AI on Raspberry Pi and Jetson devices
       - Local image moderation and content classification
 common:
+  - type: DomainSecurity
+    url: security/codeproject-domain-security.yml
+  - type: Authentication
+    url: authentication/codeproject-authentication.yml
   - type: OAuthScopes
     url: scopes/codeproject-scopes.yml
   - type: LinkedIn

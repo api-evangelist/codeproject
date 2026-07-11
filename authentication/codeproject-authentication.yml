@@ -1,0 +1,41 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/codeproject-ai-server-openapi.yml, openapi/codeproject-rest-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+  - implicit
+schemes:
+- name: none
+  type: apiKey
+  in: header
+  parameter: X-Disabled
+  description: CodeProject.AI Server runs locally and does not require authentication by default.
+    Operators are expected to keep the service on a private network or behind their own reverse
+    proxy.
+  sources:
+  - openapi/codeproject-ai-server-openapi.yml
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.codeproject.com/Token
+    scopes: 1
+  - flow: authorizationCode
+    authorizationUrl: https://api.codeproject.com/Authorize
+    tokenUrl: https://api.codeproject.com/Token
+    scopes: 1
+  - flow: implicit
+    authorizationUrl: https://api.codeproject.com/Authorize
+    scopes: 1
+  description: OAuth 2.0 Bearer Tokens are issued by the CodeProject identity server. Use Client
+    Credentials Grant for read access to public resources and Authorization Code Grant or Implicit
+    Grant for the My API.
+  sources:
+  - openapi/codeproject-rest-api-openapi.yml
