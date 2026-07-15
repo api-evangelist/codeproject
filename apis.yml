@@ -135,6 +135,8 @@ apis:
       - Edge AI on Raspberry Pi and Jetson devices
       - Local image moderation and content classification
 common:
+  - type: AgenticAccess
+    url: agentic-access/codeproject-agentic-access.yml
   - type: DomainSecurity
     url: security/codeproject-domain-security.yml
   - type: Authentication
