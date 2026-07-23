@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: CodeProject.AI Server Articles Vision-Detection API
+  description: CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.
+  version: '2.9'
+  contact:
+    name: CodeProject.AI Server
+    url: https://www.codeproject.com/AI/
+  license:
+    name: GPL-3.0
+    url: https://github.com/codeproject/CodeProject.AI-Server/blob/main/LICENSE
+servers:
+- url: http://localhost:32168
+  description: Default local CodeProject.AI Server endpoint
+tags:
+- name: Vision-Detection
+  description: Object detection across general and custom YOLO models.
+paths:
+  /v1/vision/detection:
+    post:
+      operationId: detectObjects
+      summary: Detect objects in an image
+      description: YOLO-based object detection across 80 default classes.
+      tags:
+      - Vision-Detection
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - image
+              properties:
+                image:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+                  default: 0.4
+      responses:
+        '200':
+          description: Detection results
+  /v1/vision/custom/{modelName}:
+    post:
+      operationId: detectCustom
+      summary: Run a custom-model detection
+      tags:
+      - Vision-Detection
+      parameters:
+      - name: modelName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - image
+              properties:
+                image:
+                  type: string
+                  format: binary
+                min_confidence:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Detection results
+  /v1/vision/custom/list:
+    post:
+      operationId: listCustomModels
+      summary: List installed custom detection models
+      tags:
+      - Vision-Detection
+      responses:
+        '200':
+          description: Custom model list
+components:
+  securitySchemes:
+    none:
+      type: apiKey
+      in: header
+      name: X-Disabled
+      description: CodeProject.AI Server runs locally and does not require authentication by default. Operators are expected to keep the service on a private network or behind their own reverse proxy.
+externalDocs:
+  description: CodeProject.AI Server documentation
+  url: https://codeproject.github.io/codeproject.ai/

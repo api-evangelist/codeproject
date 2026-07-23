@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: CodeProject.AI Server Articles Text API
+  description: CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.
+  version: '2.9'
+  contact:
+    name: CodeProject.AI Server
+    url: https://www.codeproject.com/AI/
+  license:
+    name: GPL-3.0
+    url: https://github.com/codeproject/CodeProject.AI-Server/blob/main/LICENSE
+servers:
+- url: http://localhost:32168
+  description: Default local CodeProject.AI Server endpoint
+tags:
+- name: Text
+  description: Sentiment analysis and summarization.
+paths:
+  /v1/text/sentiment:
+    post:
+      operationId: analyzeSentiment
+      summary: Sentiment analysis
+      tags:
+      - Text
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - text
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Sentiment result
+  /v1/text/summarize:
+    post:
+      operationId: summarizeText
+      summary: Summarize text
+      tags:
+      - Text
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - text
+              properties:
+                text:
+                  type: string
+                num_sentences:
+                  type: integer
+      responses:
+        '200':
+          description: Summary
+components:
+  securitySchemes:
+    none:
+      type: apiKey
+      in: header
+      name: X-Disabled
+      description: CodeProject.AI Server runs locally and does not require authentication by default. Operators are expected to keep the service on a private network or behind their own reverse proxy.
+externalDocs:
+  description: CodeProject.AI Server documentation
+  url: https://codeproject.github.io/codeproject.ai/

@@ -1,0 +1,140 @@
+openapi: 3.1.0
+info:
+  title: CodeProject.AI Server Articles My API
+  description: CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.
+  version: '2.9'
+  contact:
+    name: CodeProject.AI Server
+    url: https://www.codeproject.com/AI/
+  license:
+    name: GPL-3.0
+    url: https://github.com/codeproject/CodeProject.AI-Server/blob/main/LICENSE
+servers:
+- url: http://localhost:32168
+  description: Default local CodeProject.AI Server endpoint
+tags:
+- name: My
+  description: Authenticated user resources (answers, articles, blogs, bookmarks, notifications, profile, reputation, tips).
+paths:
+  /v1/My/Profile:
+    get:
+      operationId: getMyProfile
+      summary: Get the authenticated user's profile
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Profile
+        '401':
+          description: Unauthorized
+  /v1/My/Reputation:
+    get:
+      operationId: getMyReputation
+      summary: Get the authenticated user's reputation
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Reputation
+        '401':
+          description: Unauthorized
+  /v1/My/Articles:
+    get:
+      operationId: listMyArticles
+      summary: List the authenticated user's articles
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Articles
+        '401':
+          description: Unauthorized
+  /v1/My/Answers:
+    get:
+      operationId: listMyAnswers
+      summary: List the authenticated user's answers
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Answers
+        '401':
+          description: Unauthorized
+  /v1/My/Blog:
+    get:
+      operationId: listMyBlogPosts
+      summary: List the authenticated user's blog posts
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Blog posts
+        '401':
+          description: Unauthorized
+  /v1/My/Bookmarks:
+    get:
+      operationId: listMyBookmarks
+      summary: List the authenticated user's bookmarks
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Bookmarks
+        '401':
+          description: Unauthorized
+  /v1/My/Notifications:
+    get:
+      operationId: listMyNotifications
+      summary: List the authenticated user's notifications
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Notifications
+        '401':
+          description: Unauthorized
+  /v1/My/Tips:
+    get:
+      operationId: listMyTips
+      summary: List the authenticated user's tips
+      tags:
+      - My
+      security:
+      - oauth2:
+        - read
+      responses:
+        '200':
+          description: Tips
+        '401':
+          description: Unauthorized
+components:
+  securitySchemes:
+    none:
+      type: apiKey
+      in: header
+      name: X-Disabled
+      description: CodeProject.AI Server runs locally and does not require authentication by default. Operators are expected to keep the service on a private network or behind their own reverse proxy.
+externalDocs:
+  description: CodeProject.AI Server documentation
+  url: https://codeproject.github.io/codeproject.ai/

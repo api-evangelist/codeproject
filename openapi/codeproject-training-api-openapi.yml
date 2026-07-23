@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: CodeProject.AI Server Articles Training API
+  description: CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.
+  version: '2.9'
+  contact:
+    name: CodeProject.AI Server
+    url: https://www.codeproject.com/AI/
+  license:
+    name: GPL-3.0
+    url: https://github.com/codeproject/CodeProject.AI-Server/blob/main/LICENSE
+servers:
+- url: http://localhost:32168
+  description: Default local CodeProject.AI Server endpoint
+tags:
+- name: Training
+  description: Custom YOLO dataset and model training lifecycle.
+paths:
+  /v1/train/create_dataset:
+    post:
+      operationId: createTrainingDataset
+      summary: Create a custom training dataset
+      tags:
+      - Training
+      responses:
+        '200':
+          description: Dataset metadata
+  /v1/train/train_model:
+    post:
+      operationId: trainModel
+      summary: Start YOLOv5 model training
+      tags:
+      - Training
+      responses:
+        '200':
+          description: Training job started
+  /v1/train/status:
+    post:
+      operationId: getTrainingStatus
+      summary: Check training progress
+      tags:
+      - Training
+      responses:
+        '200':
+          description: Training status
+  /v1/train/cancel:
+    post:
+      operationId: cancelTraining
+      summary: Stop a running training job
+      tags:
+      - Training
+      responses:
+        '200':
+          description: Cancellation result
+  /v1/train/get_model:
+    post:
+      operationId: getTrainedModel
+      summary: Retrieve a trained model
+      tags:
+      - Training
+      responses:
+        '200':
+          description: Model artifact
+  /v1/train/get_dataset:
+    post:
+      operationId: getTrainingDataset
+      summary: Retrieve a training dataset
+      tags:
+      - Training
+      responses:
+        '200':
+          description: Dataset
+components:
+  securitySchemes:
+    none:
+      type: apiKey
+      in: header
+      name: X-Disabled
+      description: CodeProject.AI Server runs locally and does not require authentication by default. Operators are expected to keep the service on a private network or behind their own reverse proxy.
+externalDocs:
+  description: CodeProject.AI Server documentation
+  url: https://codeproject.github.io/codeproject.ai/
