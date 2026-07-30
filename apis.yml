@@ -16,7 +16,20 @@ tags:
   - Software Development
   - Tutorials
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/codeproject.png
 access: 3rd-Party
 kind: company
 created: '2025-01-01'
@@ -32,108 +45,372 @@ description: >-
   through a local HTTP REST API. CodeProject.AI is widely integrated with home-automation and surveillance platforms
   (Blue Iris, Home Assistant, Agent DVR).
 apis:
-  - aid: codeproject:codeproject-api
-    name: CodeProject REST API
-    tags:
-      - Articles
-      - Community
-      - Forum
-      - OAuth2
-      - Q&A
-      - Read-Only
-    type: REST
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.codeproject.com
-    humanURL: https://api.codeproject.com/Help
-    description: >-
-      OAuth 2.0 protected REST API providing read access to CodeProject articles, forum messages, questions, and
-      authenticated user data (answers, articles, blog posts, bookmarks, notifications, profile, reputation, tips).
-      Supports Client Credentials, Authorization Code, and Implicit Grant flows. Tokens are issued by the CodeProject
-      identity server and presented as Bearer tokens in the Authorization header.
-    properties:
-      - url: https://api.codeproject.com/Help
-        name: API Documentation
-        type: Documentation
-      - url: https://api.codeproject.com/
-        name: API Base URL
-        type: BaseURL
-      - url: https://api.codeproject.com/Samples
-        name: API Samples
-        type: Samples
-      - url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
-        name: The CodeProject API - Part 1
-        type: Article
-      - url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
-        name: The CodeProject API - Part 2 Getting Some REST
-        type: Article
-      - url: openapi/codeproject-rest-api-openapi.yml
-        type: OpenAPI
-    x-features:
-      - OAuth 2.0 Bearer Token authentication
-      - Client Credentials, Authorization Code, and Implicit Grant flows
-      - Read-only access to articles, forums, and Q&A
-      - My endpoints for authenticated user data
-      - Article rating filter (>= 3.0) on the public list
-    x-use-cases:
-      - Aggregating CodeProject articles into developer reading lists
-      - Surfacing CodeProject Q&A in IDE assistants
-      - Building user dashboards showing reputation and notifications
-      - Periodic content sync into knowledge bases
-  - aid: codeproject:codeproject-ai-server
-    name: CodeProject.AI Server API
-    tags:
-      - AI
-      - Audio
-      - Computer Vision
-      - Face Recognition
-      - Image Processing
-      - License Plate Recognition
-      - Object Detection
-      - On-Premise
-      - Self-Hosted
-      - Text
-      - Training
-    type: REST
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: http://localhost:32168
-    humanURL: https://www.codeproject.com/AI/
-    description: >-
-      Self-hosted AI service that exposes computer vision (object detection, scene, face, ALPR), image processing
-      (background removal, cartoonise, portrait filter, super-resolution), audio classification, NLP (sentiment,
-      summarization), and YOLOv5 training endpoints through a local HTTP REST API. All endpoints are POST and accept
-      multipart uploads. The server runs on Windows, macOS, Linux, Raspberry Pi, Jetson, and OrangePi, plus Docker
-      images, and integrates with Blue Iris, Home Assistant, and Agent DVR for surveillance use cases.
-    properties:
-      - url: https://www.codeproject.com/AI/
-        name: CodeProject.AI Server Home
-        type: Portal
-      - url: https://codeproject.github.io/codeproject.ai/
-        name: Documentation
-        type: Documentation
-      - url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
-        name: API Reference
-        type: APIReference
-      - url: https://github.com/codeproject/CodeProject.AI-Server
-        name: GitHub Repository
-        type: SourceCode
-      - url: openapi/codeproject-ai-server-openapi.yml
-        type: OpenAPI
-    x-features:
-      - Local-only HTTP REST API (no internet dependency)
-      - YOLO-based object detection (80+ classes)
-      - Custom YOLOv5 model loading and training
-      - Face detection, registration, recognition, and matching
-      - Automatic License Plate Recognition (ALPR)
-      - Image background removal, cartoonise, portrait, super-resolution
-      - Sound classification and NLP (sentiment, summarization)
-      - Modular installer-based feature set
-      - Cross-platform (Windows, macOS, Linux, Pi, Jetson, OrangePi, Docker)
-    x-use-cases:
-      - On-premise CCTV/NVR object and person detection
-      - License plate capture for parking and security
-      - Privacy-preserving face recognition for home automation
-      - Edge AI on Raspberry Pi and Jetson devices
-      - Local image moderation and content classification
+- aid: codeproject:codeproject-articles-api
+  name: CodeProject Articles API
+  description: Articles, technical blogs, and tips and tricks (rating >= 3.0).
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Articles
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-articles-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-audio-api
+  name: CodeProject Audio API
+  description: Sound classification.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Audio
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-audio-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-forummessages-api
+  name: CodeProject ForumMessages API
+  description: Latest messages for a forum or message thread.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - ForumMessages
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-forummessages-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-image-processing-api
+  name: CodeProject Image-Processing API
+  description: Background removal, cartoonise, portrait filter, super-resolution.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Image-Processing
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-image-processing-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-my-api
+  name: CodeProject My API
+  description: >-
+    Authenticated user resources (answers, articles, blogs, bookmarks, notifications, profile, reputation,
+    tips).
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - My
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-my-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-questions-api
+  name: CodeProject Questions API
+  description: Q&A questions (new, active, unanswered).
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Questions
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-questions-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-status-api
+  name: CodeProject Status API
+  description: Server status, version, logs, and update checks.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-status-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-text-api
+  name: CodeProject Text API
+  description: Sentiment analysis and summarization.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Text
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-text-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-training-api
+  name: CodeProject Training API
+  description: Custom YOLO dataset and model training lifecycle.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Training
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-training-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-vision-alpr-api
+  name: CodeProject Vision-ALPR API
+  description: Automatic license-plate recognition.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Vision-ALPR
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-vision-alpr-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-vision-detection-api
+  name: CodeProject Vision-Detection API
+  description: Object detection across general and custom YOLO models.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Vision-Detection
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-vision-detection-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-vision-face-api
+  name: CodeProject Vision-Face API
+  description: Face detection, comparison, registration, and recognition.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Vision-Face
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-vision-face-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
+- aid: codeproject:codeproject-vision-scene-api
+  name: CodeProject Vision-Scene API
+  description: Scene classification.
+  humanURL: https://api.codeproject.com/Help
+  baseURL: https://api.codeproject.com
+  tags:
+  - Vision-Scene
+  properties:
+  - type: OpenAPI
+    url: openapi/codeproject-vision-scene-api-openapi.yml
+  - type: Documentation
+    url: https://api.codeproject.com/Help
+  - type: BaseURL
+    url: https://api.codeproject.com/
+  - type: Samples
+    url: https://api.codeproject.com/Samples
+  - type: Article
+    url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
+  - type: Article
+    url: https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest
+  - type: Portal
+    url: https://www.codeproject.com/AI/
+  - type: Documentation
+    url: https://codeproject.github.io/codeproject.ai/
+  - type: APIReference
+    url: https://codeproject.github.io/codeproject.ai/api/api_reference.html
+  - type: SourceCode
+    url: https://github.com/codeproject/CodeProject.AI-Server
 common:
   - type: AgenticAccess
     url: agentic-access/codeproject-agentic-access.yml
