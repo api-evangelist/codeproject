@@ -1,0 +1,38 @@
+{
+  "provider": "codeproject",
+  "sources": [
+    "codeproject-articles-api-openapi.yml",
+    "codeproject-audio-api-openapi.yml",
+    "codeproject-forummessages-api-openapi.yml",
+    "codeproject-image-processing-api-openapi.yml",
+    "codeproject-my-api-openapi.yml",
+    "codeproject-questions-api-openapi.yml",
+    "codeproject-status-api-openapi.yml",
+    "codeproject-text-api-openapi.yml",
+    "codeproject-training-api-openapi.yml",
+    "codeproject-vision-alpr-api-openapi.yml",
+    "codeproject-vision-detection-api-openapi.yml",
+    "codeproject-vision-face-api-openapi.yml",
+    "codeproject-vision-scene-api-openapi.yml"
+  ],
+  "outputs": [
+    "codeproject-articles-api-openapi.yml",
+    "codeproject-audio-api-openapi.yml",
+    "codeproject-forummessages-api-openapi.yml",
+    "codeproject-image-processing-api-openapi.yml",
+    "codeproject-my-api-openapi.yml",
+    "codeproject-questions-api-openapi.yml",
+    "codeproject-status-api-openapi.yml",
+    "codeproject-text-api-openapi.yml",
+    "codeproject-training-api-openapi.yml",
+    "codeproject-vision-alpr-api-openapi.yml",
+    "codeproject-vision-detection-api-openapi.yml",
+    "codeproject-vision-face-api-openapi.yml",
+    "codeproject-vision-scene-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
