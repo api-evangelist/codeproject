@@ -412,6 +412,10 @@ apis:
   - type: SourceCode
     url: https://github.com/codeproject/CodeProject.AI-Server
 common:
+  - type: IssueTracker
+    url: https://github.com/codeproject/CodeProject.AI-Server/issues
+  - type: Releases
+    url: https://github.com/codeproject/CodeProject.AI-Server/releases
   - type: AgenticAccess
     url: agentic-access/codeproject-agentic-access.yml
   - type: DomainSecurity
