@@ -1,0 +1,600 @@
+{
+  "item": [
+    {
+      "id": "606fa53c-f9f1-43fb-be20-72a1ec35cd68",
+      "name": "Vision-Face",
+      "description": {
+        "content": "Face detection, comparison, registration, and recognition.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba156aa2-4000-4404-942b-eb8913b4f198",
+          "name": "Detect faces in an image",
+          "request": {
+            "name": "Detect faces in an image",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3eb94858-b2bf-4327-9ba2-353d9f276722",
+              "name": "Face detection result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4233f928-b68f-4456-9bdb-c794de6e6572",
+          "name": "Compare two face images for similarity",
+          "request": {
+            "name": "Compare two face images for similarity",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image1",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "image2",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4b07900a-24a3-48a6-aaed-2517704d2f5f",
+              "name": "Match result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image1",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image2",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a8ad071-4936-49be-ac1e-48041330dc3b",
+          "name": "List registered users for face recognition",
+          "request": {
+            "name": "List registered users for face recognition",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6168fb5-980d-4b08-8723-b0863be70eeb",
+              "name": "Registered users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2b32545-3d4b-463b-85e4-23f2125c132f",
+          "name": "Register face images for a user",
+          "request": {
+            "name": "Register face images for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "userid",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f454faaf-08c7-441b-8b63-89bdcc8e0bc5",
+              "name": "Registration result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "userid",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23e20a66-227b-46b0-bb7f-1a73d1aa82a4",
+          "name": "Remove a registered user",
+          "request": {
+            "name": "Remove a registered user",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "userid",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4a10e891-6367-4622-895c-450c02e22b93",
+              "name": "Deletion result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "userid",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fde05622-906f-4ed8-96d9-b459ccea79c9",
+          "name": "Identify faces in an image against the registered set",
+          "request": {
+            "name": "Identify faces in an image against the registered set",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vision",
+                "face",
+                "recognize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "min_confidence",
+                  "value": "<float>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "180a3d0a-4c57-4da3-8d82-7acf65c0943b",
+              "name": "Recognition result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vision",
+                    "face",
+                    "recognize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "image",
+                      "type": "file"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "min_confidence",
+                      "value": "<float>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:32168",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "db865da2-23f8-4296-b84e-7c9f6c941c9a",
+    "name": "CodeProject.AI Server Articles Vision-Face API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.\n\nContact Support:\n Name: CodeProject.AI Server",
+      "type": "text/plain"
+    }
+  }
+}

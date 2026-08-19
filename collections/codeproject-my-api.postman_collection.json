@@ -1,0 +1,744 @@
+{
+  "item": [
+    {
+      "id": "018bcaa5-d4dd-4d70-8dba-31ed7ebb6b2f",
+      "name": "My",
+      "description": {
+        "content": "Authenticated user resources (answers, articles, blogs, bookmarks, notifications, profile, reputation, tips).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a90253f-a492-40d4-adf9-aae26721cb16",
+          "name": "Get the authenticated user's profile",
+          "request": {
+            "name": "Get the authenticated user's profile",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "ccc4590f-4168-4557-b35c-ec74fa583c7e",
+              "name": "Profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eeefbc6d-e681-4d3f-8329-1fd9f08af624",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49bcbe0d-b92a-4cc0-ae48-3f017bc16a8e",
+          "name": "Get the authenticated user's reputation",
+          "request": {
+            "name": "Get the authenticated user's reputation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Reputation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "3e8b16cf-a068-42ed-83f6-1943cb4ed9b9",
+              "name": "Reputation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Reputation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51feaa4b-3234-4ab6-bd8f-49e9a22d5917",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Reputation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a57a606-b756-41ef-afea-cdc8af8aac55",
+          "name": "List the authenticated user's articles",
+          "request": {
+            "name": "List the authenticated user's articles",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "d3641d25-6541-4e37-ac31-c4ead62a145e",
+              "name": "Articles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8c8c87b4-ccd8-499f-98b4-5c4e26ef7f94",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c38d8055-e544-4742-9451-7977fd63a66c",
+          "name": "List the authenticated user's answers",
+          "request": {
+            "name": "List the authenticated user's answers",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Answers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "d8bc1047-6a88-4ae9-b446-671c473ebeb4",
+              "name": "Answers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Answers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0bef657b-62e1-41a5-8020-3d6e8a463c7a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Answers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0002140-2e9c-466e-9f39-162d8a45869d",
+          "name": "List the authenticated user's blog posts",
+          "request": {
+            "name": "List the authenticated user's blog posts",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Blog"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "b8e4ba1b-2c59-4c87-9b94-a0bc87f52e42",
+              "name": "Blog posts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Blog"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e52a8f48-5ce2-4eb9-b7e2-3a8041f0ba41",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Blog"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2faefde3-bff3-4aab-966c-615fd6458b51",
+          "name": "List the authenticated user's bookmarks",
+          "request": {
+            "name": "List the authenticated user's bookmarks",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Bookmarks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "7baf1634-0b07-417b-8cb6-da6ae98b21cd",
+              "name": "Bookmarks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Bookmarks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d61d3f83-9bdd-4565-a51b-abb4b7ee2718",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Bookmarks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2918df6-8c3a-4276-a0b9-df2239857f21",
+          "name": "List the authenticated user's notifications",
+          "request": {
+            "name": "List the authenticated user's notifications",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Notifications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "2626ea21-c2dd-444f-b719-41f028619853",
+              "name": "Notifications",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Notifications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70fe21fa-0f09-4752-a3d4-591fd7c2f243",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Notifications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95763053-69a0-4908-9e36-283b5d43a15f",
+          "name": "List the authenticated user's tips",
+          "request": {
+            "name": "List the authenticated user's tips",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "My",
+                "Tips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "4f6754e9-e4f0-4e9e-9e87-c3acaa374ff2",
+              "name": "Tips",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Tips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e24dbf32-4d95-4577-b68b-dba91e903bd5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "My",
+                    "Tips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:32168",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5f208820-3d13-4d48-9834-39725d6333a0",
+    "name": "CodeProject.AI Server Articles My API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.\n\nContact Support:\n Name: CodeProject.AI Server",
+      "type": "text/plain"
+    }
+  }
+}

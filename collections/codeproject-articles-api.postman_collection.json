@@ -1,0 +1,226 @@
+{
+  "item": [
+    {
+      "id": "20b5b777-ba09-4bc6-8a3d-78fec840cf2c",
+      "name": "Articles",
+      "description": {
+        "content": "Articles, technical blogs, and tips and tricks (rating >= 3.0).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1cc7abd2-2788-45e9-985b-e805a83c150c",
+          "name": "List the latest articles",
+          "request": {
+            "name": "List the latest articles",
+            "description": {
+              "content": "Retrieve the latest articles, technical blogs, and tips & tricks (rating >= 3.0), ordered by modified date.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "Articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minRating",
+                  "value": "<float>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4de509e8-d956-4387-a3ad-1d256d54eb91",
+              "name": "Article list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "Articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "minRating",
+                      "value": "<float>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "882f5924-8d09-4044-8fcd-633bc31f97fd",
+          "name": "Get a single article",
+          "request": {
+            "name": "Get a single article",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "Articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "465aacf2-d935-4845-a124-f01acab4b68f",
+              "name": "Article detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "Articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d3ae0d3b-bf58-4615-880f-0f15f8abe693",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "Articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:32168",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "963c5539-f6ea-4a3c-bdea-abe894ae3ef5",
+    "name": "CodeProject.AI Server Articles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.\n\nContact Support:\n Name: CodeProject.AI Server",
+      "type": "text/plain"
+    }
+  }
+}

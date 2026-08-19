@@ -1,0 +1,268 @@
+{
+  "item": [
+    {
+      "id": "179b9eef-73f4-41c3-8b52-a59c51014310",
+      "name": "Status",
+      "description": {
+        "content": "Server status, version, logs, and update checks.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0184179e-2e98-4068-90cf-fa99c297149a",
+          "name": "Server health check",
+          "request": {
+            "name": "Server health check",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e617ed85-2bcf-4da2-aced-cc5284b57a29",
+              "name": "Server reachable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "ping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a6b3a908-c4d6-49e4-b309-1ca726a6fa2e",
+          "name": "Get server version",
+          "request": {
+            "name": "Get server version",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32dc9b22-9f40-4b25-812d-dff90ad44e5e",
+              "name": "Version information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db1f1014-71ee-4c9a-b5aa-564b10497d4f",
+          "name": "Retrieve server logs",
+          "request": {
+            "name": "Retrieve server logs",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6a40a06-9419-49c7-91fe-30f4603f5df1",
+              "name": "Log entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9beed368-ce44-45cc-9fe5-f05c1efc10e5",
+          "name": "Check whether a new server version is available",
+          "request": {
+            "name": "Check whether a new server version is available",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "status",
+                "updateavailable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d7a4b85-e229-464a-9aa2-658cbf6f0505",
+              "name": "Update availability status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "status",
+                    "updateavailable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:32168",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "54a44e37-c1fe-4eee-9967-ccf8cae51dc3",
+    "name": "CodeProject.AI Server Articles Status API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.\n\nContact Support:\n Name: CodeProject.AI Server",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles ForumMessages API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ForumMessages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the latest messages for a forum",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/ForumMessages/:forumId",
+            "params": [
+              {
+                "name": "forumId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the latest messages for a forum"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

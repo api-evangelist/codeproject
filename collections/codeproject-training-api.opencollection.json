@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Training API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Training",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a custom training dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/create_dataset"
+          },
+          "docs": "Create a custom training dataset"
+        },
+        {
+          "info": {
+            "name": "Start YOLOv5 model training",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/train_model"
+          },
+          "docs": "Start YOLOv5 model training"
+        },
+        {
+          "info": {
+            "name": "Check training progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/status"
+          },
+          "docs": "Check training progress"
+        },
+        {
+          "info": {
+            "name": "Stop a running training job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/cancel"
+          },
+          "docs": "Stop a running training job"
+        },
+        {
+          "info": {
+            "name": "Retrieve a trained model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/get_model"
+          },
+          "docs": "Retrieve a trained model"
+        },
+        {
+          "info": {
+            "name": "Retrieve a training dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/train/get_dataset"
+          },
+          "docs": "Retrieve a training dataset"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

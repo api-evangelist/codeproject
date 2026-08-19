@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Vision-Scene API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vision-Scene",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Classify the scene depicted in an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/scene",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Classify the scene depicted in an image"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

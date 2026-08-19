@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Vision-Detection API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vision-Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect objects in an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/detection",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "YOLO-based object detection across 80 default classes."
+        },
+        {
+          "info": {
+            "name": "Run a custom-model detection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/custom/:modelName",
+            "params": [
+              {
+                "name": "modelName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Run a custom-model detection"
+        },
+        {
+          "info": {
+            "name": "List installed custom detection models",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/custom/list"
+          },
+          "docs": "List installed custom detection models"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

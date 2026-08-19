@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Vision-ALPR API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vision-ALPR",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect and read license plates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/alpr",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "upload",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Detect and read license plates"
+        },
+        {
+          "info": {
+            "name": "Legacy ALPR route (deprecated alias of /v1/vision/alpr)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/alpr",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "upload",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Legacy ALPR route (deprecated alias of /v1/vision/alpr)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

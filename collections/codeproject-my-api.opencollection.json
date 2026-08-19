@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles My API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "My",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the authenticated user's profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Profile"
+          },
+          "docs": "Get the authenticated user's profile"
+        },
+        {
+          "info": {
+            "name": "Get the authenticated user's reputation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Reputation"
+          },
+          "docs": "Get the authenticated user's reputation"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Articles"
+          },
+          "docs": "List the authenticated user's articles"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's answers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Answers"
+          },
+          "docs": "List the authenticated user's answers"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's blog posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Blog"
+          },
+          "docs": "List the authenticated user's blog posts"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's bookmarks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Bookmarks"
+          },
+          "docs": "List the authenticated user's bookmarks"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Notifications"
+          },
+          "docs": "List the authenticated user's notifications"
+        },
+        {
+          "info": {
+            "name": "List the authenticated user's tips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/My/Tips"
+          },
+          "docs": "List the authenticated user's tips"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

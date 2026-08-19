@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the latest articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/Articles",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minRating",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the latest articles, technical blogs, and tips & tricks (rating >= 3.0), ordered by modified date."
+        },
+        {
+          "info": {
+            "name": "Get a single article",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:32168/v1/Articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single article"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

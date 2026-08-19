@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Status API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Status",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/ping"
+          },
+          "docs": "Server health check"
+        },
+        {
+          "info": {
+            "name": "Get server version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/version"
+          },
+          "docs": "Get server version"
+        },
+        {
+          "info": {
+            "name": "Retrieve server logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/logs"
+          },
+          "docs": "Retrieve server logs"
+        },
+        {
+          "info": {
+            "name": "Check whether a new server version is available",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/status/updateavailable"
+          },
+          "docs": "Check whether a new server version is available"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

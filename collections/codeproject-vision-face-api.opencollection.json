@@ -1,0 +1,154 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Vision-Face API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vision-Face",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect faces in an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Detect faces in an image"
+        },
+        {
+          "info": {
+            "name": "Compare two face images for similarity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/match",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image1",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "image2",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Compare two face images for similarity"
+        },
+        {
+          "info": {
+            "name": "List registered users for face recognition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/list"
+          },
+          "docs": "List registered users for face recognition"
+        },
+        {
+          "info": {
+            "name": "Register face images for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/register",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "userid",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Register face images for a user"
+        },
+        {
+          "info": {
+            "name": "Remove a registered user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/delete",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "userid",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Remove a registered user"
+        },
+        {
+          "info": {
+            "name": "Identify faces in an image against the registered set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/vision/face/recognize",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Identify faces in an image against the registered set"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

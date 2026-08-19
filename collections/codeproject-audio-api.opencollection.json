@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Audio API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Audio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Classify a sound file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/sound/classify",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "sound",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "min_confidence",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Classify a sound file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

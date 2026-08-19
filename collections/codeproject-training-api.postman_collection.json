@@ -1,0 +1,386 @@
+{
+  "item": [
+    {
+      "id": "39cee80d-d284-49bd-a36f-f2f15dad470b",
+      "name": "Training",
+      "description": {
+        "content": "Custom YOLO dataset and model training lifecycle.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a23f4ce2-dc0f-4fcb-a4bf-e54177e2a706",
+          "name": "Create a custom training dataset",
+          "request": {
+            "name": "Create a custom training dataset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "create_dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44725843-e1b5-4f75-ba2e-55504c179420",
+              "name": "Dataset metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "create_dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbaf6349-a59d-4cca-afcb-99e18a917861",
+          "name": "Start YOLOv5 model training",
+          "request": {
+            "name": "Start YOLOv5 model training",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "train_model"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "997904ab-789c-454c-95db-6c7b12ec5dff",
+              "name": "Training job started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "train_model"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68039534-2052-4a92-beb5-1a696d7d1882",
+          "name": "Check training progress",
+          "request": {
+            "name": "Check training progress",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37b79d47-18cc-467e-a271-085b27e50838",
+              "name": "Training status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbdc8d74-bd82-4a68-9d7d-b7c647963bad",
+          "name": "Stop a running training job",
+          "request": {
+            "name": "Stop a running training job",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92519cc5-3d05-40a5-95e9-02b06af04d88",
+              "name": "Cancellation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "058575bf-f4bb-4b4f-92af-f850d6e38e7d",
+          "name": "Retrieve a trained model",
+          "request": {
+            "name": "Retrieve a trained model",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "get_model"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "490a8f1a-24d8-41d9-96a2-a5cfaa71cc81",
+              "name": "Model artifact",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "get_model"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bede0c0-63ad-4831-b896-4682d20cd737",
+          "name": "Retrieve a training dataset",
+          "request": {
+            "name": "Retrieve a training dataset",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "train",
+                "get_dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9081084c-efb7-4752-a85c-d64e9f008b38",
+              "name": "Dataset",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "train",
+                    "get_dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:32168",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8dbe12bf-5824-441c-babb-97afe56fbaeb",
+    "name": "CodeProject.AI Server Articles Training API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.\n\nContact Support:\n Name: CodeProject.AI Server",
+      "type": "text/plain"
+    }
+  }
+}

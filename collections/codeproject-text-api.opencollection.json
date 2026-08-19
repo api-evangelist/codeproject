@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Text API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Text",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sentiment analysis",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/text/sentiment",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "text",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Sentiment analysis"
+        },
+        {
+          "info": {
+            "name": "Summarize text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/text/summarize",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "text",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "num_sentences",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Summarize text"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

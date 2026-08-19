@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CodeProject.AI Server Articles Image-Processing API",
+    "version": "2.9"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Image-Processing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Remove the background from an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/removebackground",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "use_alphamatting",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Remove the background from an image"
+        },
+        {
+          "info": {
+            "name": "Convert an image to anime/cartoon style",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/cartoonise",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Convert an image to anime/cartoon style"
+        },
+        {
+          "info": {
+            "name": "Apply a portrait/background-blur effect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/portraitfilter",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "strength",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Apply a portrait/background-blur effect"
+        },
+        {
+          "info": {
+            "name": "Upscale an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:32168/v1/image/superresolution",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "image",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upscale an image"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
