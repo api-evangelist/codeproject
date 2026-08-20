@@ -2,6 +2,20 @@ aid: codeproject
 url: https://raw.githubusercontent.com/api-evangelist/codeproject/refs/heads/main/apis.yml
 name: CodeProject
 tags:
+  - Artificial Intelligence
+  - Articles
+  - Community
+  - Computer-Vision
+  - Developer Community
+  - Face Recognition
+  - Forum
+  - Knowledge Base
+  - License Plate Recognition
+  - Object Detection
+  - Q&A
+  - Software Development
+  - Tutorials
+tags_raw:
   - AI
   - Articles
   - Community
@@ -135,6 +149,8 @@ apis:
   humanURL: https://api.codeproject.com/Help
   baseURL: https://api.codeproject.com
   tags:
+  - Image Processing
+  tags_raw:
   - Image-Processing
   properties:
   - type: OpenAPI
