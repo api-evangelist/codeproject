@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: CodeProject.AI Server Articles Vision-ALPR API
+  title: CodeProject.AI Server Vision ALPR API
   description: CodeProject.AI Server is a self-contained, self-hosted, free and open-source AI service that exposes computer-vision, audio, NLP, and model-training capabilities through a local HTTP REST API. It runs on Windows, macOS, Linux, Raspberry Pi, NVIDIA Jetson, OrangePi, and as a Docker container, and is most often integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR) for object detection, face recognition, ALPR (license-plate), and scene classification. All endpoints are POST and accept multipart/form-data uploads.
   version: '2.9'
   contact:

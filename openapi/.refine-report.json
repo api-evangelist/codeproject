@@ -1,38 +1,45 @@
 {
   "provider": "codeproject",
   "sources": [
-    "codeproject-articles-api-openapi.yml",
-    "codeproject-audio-api-openapi.yml",
-    "codeproject-forummessages-api-openapi.yml",
-    "codeproject-image-processing-api-openapi.yml",
-    "codeproject-my-api-openapi.yml",
-    "codeproject-questions-api-openapi.yml",
-    "codeproject-status-api-openapi.yml",
-    "codeproject-text-api-openapi.yml",
-    "codeproject-training-api-openapi.yml",
-    "codeproject-vision-alpr-api-openapi.yml",
-    "codeproject-vision-detection-api-openapi.yml",
-    "codeproject-vision-face-api-openapi.yml",
-    "codeproject-vision-scene-api-openapi.yml"
+    "_original/codeproject-ai-server-openapi.yml",
+    "_original/codeproject-rest-api-openapi.yml"
   ],
   "outputs": [
-    "codeproject-articles-api-openapi.yml",
     "codeproject-audio-api-openapi.yml",
-    "codeproject-forummessages-api-openapi.yml",
     "codeproject-image-processing-api-openapi.yml",
-    "codeproject-my-api-openapi.yml",
-    "codeproject-questions-api-openapi.yml",
     "codeproject-status-api-openapi.yml",
     "codeproject-text-api-openapi.yml",
     "codeproject-training-api-openapi.yml",
     "codeproject-vision-alpr-api-openapi.yml",
     "codeproject-vision-detection-api-openapi.yml",
     "codeproject-vision-face-api-openapi.yml",
-    "codeproject-vision-scene-api-openapi.yml"
+    "codeproject-vision-scene-api-openapi.yml",
+    "codeproject-articles-api-openapi.yml",
+    "codeproject-forummessages-api-openapi.yml",
+    "codeproject-my-api-openapi.yml",
+    "codeproject-questions-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "codeproject-ai-server-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "codeproject-rest-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0"
+  ],
+  "skipped": [
+    "codeproject-articles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-audio-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-forummessages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-image-processing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-my-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-questions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-status-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-text-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-training-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-vision-alpr-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-vision-detection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-vision-face-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codeproject-vision-scene-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
