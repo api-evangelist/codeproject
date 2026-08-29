@@ -86,7 +86,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -114,7 +114,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -142,7 +142,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -172,7 +172,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -202,7 +202,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -230,7 +230,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -258,7 +258,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -286,7 +286,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -314,7 +314,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -342,7 +342,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -370,7 +370,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -398,7 +398,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -426,7 +426,7 @@ apis:
     url: https://api.codeproject.com/Help
   - type: BaseURL
     url: https://api.codeproject.com/
-  - type: Samples
+  - type: Examples
     url: https://api.codeproject.com/Samples
   - type: Article
     url: https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part
@@ -463,7 +463,7 @@ common:
     type: Documentation
   - url: https://api.codeproject.com/Samples
     name: API Samples
-    type: Samples
+    type: Examples
   - url: https://www.codeproject.com/Terms
     name: Terms of Service
     type: TermsOfService
