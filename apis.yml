@@ -162,7 +162,7 @@ apis:
   humanURL: https://api.codeproject.com/Help
   baseURL: https://api.codeproject.com
   tags:
-  - Image Processing
+  - Image-Processing
   tags_raw:
   - Image-Processing
   properties:
