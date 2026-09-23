@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: CodeProject REST Articles API
-  description: CodeProject's REST API at api.codeproject.com provides read access to articles, forum messages, questions, and authenticated user profile data from the codeproject.com developer community. Authentication uses OAuth 2.0 Bearer Tokens via Client Credentials, Authorization Code, or Implicit Grant flows. The "My" API set requires the Authorization Code or Implicit Grant flows because it accesses the signed-in user's resources, while the Articles, ForumMessages, and Questions endpoints can be accessed with a Client Credentials token. Tokens are sent in the Authorization header.
+  description: CodeProject's REST API at api.codeproject.com provides read access to articles, forum messages, questions, and authenticated user profile data from the codeproject.com developer community.
   version: 1.0-beta
   contact:
     name: CodeProject API Support
