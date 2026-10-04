@@ -445,6 +445,9 @@ apis:
   - type: SourceCode
     url: https://github.com/codeproject/CodeProject.AI-Server
 common:
+  - type: CapabilityMap
+    url: capabilities/codeproject-capability-edges.yml
+    name: CodeProject Business Capability Map
   - type: IssueTracker
     url: https://github.com/codeproject/CodeProject.AI-Server/issues
   - type: Releases
