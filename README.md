@@ -1,4 +1,4 @@
-# CodeProject (codeproject)
+# CodeProject
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,113 +66,160 @@
 
 CodeProject is a long-running online community for software developers founded in 1999, hosting hundreds of thousands of developer-contributed articles, tutorials, code samples, tips, and a Q&A forum across a broad range of programming topics. It exposes a public REST API at api.codeproject.com (V1 Beta) for read access to articles, forum messages, questions, and authenticated user data, secured by OAuth 2.0 Bearer Tokens. CodeProject also operates CodeProject.AI Server, a free, open-source, self-hosted AI service that exposes object detection, face recognition, license-plate reading (ALPR), scene classification, image processing, audio classification, text analytics, and YOLOv5 training through a local HTTP REST API. CodeProject.AI is widely integrated with home-automation and surveillance platforms (Blue Iris, Home Assistant, Agent DVR).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/codeproject/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/codeproject/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Articles · Community · Computer Vision · Developer Community · Face Recognition · Forums · Knowledge Base · License Plate Recognition · Object Detection · Q&A · Software Development
 
-## Scope
+## CodeProject on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for CodeProject is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/codeproject/](https://apis.io/providers/codeproject/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- AI
-- Articles
-- Community
-- Computer Vision
-- Developer Community
-- Face Recognition
-- Forum
-- Knowledge Base
-- License Plate Recognition
-- Object Detection
-- Q&A
-- Software Development
-- Tutorials
+- [CodeProject Articles API](https://apis.io/apis/codeproject/codeproject-articles-api/) — Articles, technical blogs, and tips and tricks (rating >= 3.0).
+- [CodeProject Audio API](https://apis.io/apis/codeproject/codeproject-audio-api/) — Sound classification.
+- [CodeProject ForumMessages API](https://apis.io/apis/codeproject/codeproject-forummessages-api/) — Latest messages for a forum or message thread.
+- [CodeProject Image-Processing API](https://apis.io/apis/codeproject/codeproject-image-processing-api/) — Background removal, cartoonise, portrait filter, super-resolution.
+- [CodeProject My API](https://apis.io/apis/codeproject/codeproject-my-api/) — Authenticated user resources (answers, articles, blogs, bookmarks, notifications, profile, reputation, tips).
+- [CodeProject Questions API](https://apis.io/apis/codeproject/codeproject-questions-api/) — Q&A questions (new, active, unanswered).
+- [CodeProject Status API](https://apis.io/apis/codeproject/codeproject-status-api/) — Server status, version, logs, and update checks.
+- [CodeProject Text API](https://apis.io/apis/codeproject/codeproject-text-api/) — Sentiment analysis and summarization.
+- [CodeProject Training API](https://apis.io/apis/codeproject/codeproject-training-api/) — Custom YOLO dataset and model training lifecycle.
+- [CodeProject Vision-ALPR API](https://apis.io/apis/codeproject/codeproject-vision-alpr-api/) — Automatic license-plate recognition.
+- [CodeProject Vision-Detection API](https://apis.io/apis/codeproject/codeproject-vision-detection-api/) — Object detection across general and custom YOLO models.
+- [CodeProject Vision-Face API](https://apis.io/apis/codeproject/codeproject-vision-face-api/) — Face detection, comparison, registration, and recognition.
+- [CodeProject Vision-Scene API](https://apis.io/apis/codeproject/codeproject-vision-scene-api/) — Scene classification.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### CodeProject REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-OAuth 2.0 protected REST API providing read access to CodeProject articles, forum messages, questions, and authenticated user data (answers, articles, blog posts, bookmarks, notifications, profile, reputation, tips). Supports Client Credentials, Authorization Code, and Implicit Grant flows. Tokens are issued by the CodeProject identity server and presented as Bearer tokens in the Authorization header.
+- [Codeproject Agentic Access](https://apis.io/agentic-access/codeproject/codeproject-agentic-access/)
 
-- **Human URL:** [https://api.codeproject.com/Help](https://api.codeproject.com/Help)
-- **Base URL:** `https://api.codeproject.com`
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- Articles
-- Community
-- Forum
-- OAuth2
-- Q&A
-- Read-Only
+- [Codeproject Context](https://apis.io/jsonld/codeproject/codeproject-context/)
 
-#### Properties
+#### Collections (15)
 
-- [Documentation](https://api.codeproject.com/Help)
-- [Base U R L](https://api.codeproject.com/)
-- [Samples](https://api.codeproject.com/Samples)
-- [Article](https://www.codeproject.com/Articles/986918/The-CodeProject-API-Part)
-- [Article](https://www.codeproject.com/articles/989081/the-code-project-api-part-getting-some-rest)
-- [OpenAPI](openapi/codeproject-rest-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/codeproject-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/codeproject-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### CodeProject.AI Server API
+- [CodeProject.AI Server API](https://apis.io/collections/codeproject/open-codeproject-ai-server/)
+- [CodeProject.AI Server Articles API](https://apis.io/collections/codeproject/open-codeproject-articles-api/)
+- [CodeProject.AI Server Articles Audio API](https://apis.io/collections/codeproject/open-codeproject-audio-api/)
+- [CodeProject.AI Server Articles ForumMessages API](https://apis.io/collections/codeproject/open-codeproject-forummessages-api/)
+- [CodeProject.AI Server Articles Image-Processing API](https://apis.io/collections/codeproject/open-codeproject-image-processing-api/)
+- [CodeProject.AI Server Articles My API](https://apis.io/collections/codeproject/open-codeproject-my-api/)
+- [CodeProject.AI Server Articles Questions API](https://apis.io/collections/codeproject/open-codeproject-questions-api/)
+- [CodeProject REST API](https://apis.io/collections/codeproject/open-codeproject-rest-api/)
+- [CodeProject.AI Server Articles Status API](https://apis.io/collections/codeproject/open-codeproject-status-api/)
+- [CodeProject.AI Server Articles Text API](https://apis.io/collections/codeproject/open-codeproject-text-api/)
+- [CodeProject.AI Server Articles Training API](https://apis.io/collections/codeproject/open-codeproject-training-api/)
+- [CodeProject.AI Server Articles Vision-ALPR API](https://apis.io/collections/codeproject/open-codeproject-vision-alpr-api/)
+- [CodeProject.AI Server Articles Vision-Detection API](https://apis.io/collections/codeproject/open-codeproject-vision-detection-api/)
+- [CodeProject.AI Server Articles Vision-Face API](https://apis.io/collections/codeproject/open-codeproject-vision-face-api/)
+- [CodeProject.AI Server Articles Vision-Scene API](https://apis.io/collections/codeproject/open-codeproject-vision-scene-api/)
 
-Self-hosted AI service that exposes computer vision (object detection, scene, face, ALPR), image processing (background removal, cartoonise, portrait filter, super-resolution), audio classification, NLP (sentiment, summarization), and YOLOv5 training endpoints through a local HTTP REST API. All endpoints are POST and accept multipart uploads. The server runs on Windows, macOS, Linux, Raspberry Pi, Jetson, and OrangePi, plus Docker images, and integrates with Blue Iris, Home Assistant, and Agent DVR for surveillance use cases.
+#### Governance rules (1)
 
-- **Human URL:** [https://www.codeproject.com/AI/](https://www.codeproject.com/AI/)
-- **Base URL:** `http://localhost:32168`
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [CodeProject API Rules](https://apis.io/rules/codeproject/codeproject-rules/)
 
-- AI
-- Audio
-- Computer Vision
-- Face Recognition
-- Image Processing
-- License Plate Recognition
-- Object Detection
-- On-Premise
-- Self-Hosted
-- Text
-- Training
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Portal](https://www.codeproject.com/AI/)
-- [Documentation](https://codeproject.github.io/codeproject.ai/)
-- [API Reference](https://codeproject.github.io/codeproject.ai/api/api_reference.html)
-- [Source Code](https://github.com/codeproject/CodeProject.AI-Server)
-- [OpenAPI](openapi/codeproject-ai-server-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/codeproject-ai-server.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/codeproject-ai-server.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Codeproject Authentication](https://apis.io/security/codeproject/codeproject-authentication/)
+- [Codeproject Domain Security](https://apis.io/security/codeproject/codeproject-domain-security/)
 
-## Common Properties
+#### OAuth scopes (1)
 
-- [LinkedIn](https://www.linkedin.com/company/the-code-project)
+The permissions the API asks for.
+
+- [Codeproject Scopes](https://apis.io/scopes/codeproject/codeproject-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Codeproject Plans Pricing](https://apis.io/plans/codeproject/codeproject-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Codeproject Rate Limits](https://apis.io/rate-limits/codeproject/codeproject-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Codeproject Finops](https://apis.io/finops/codeproject/codeproject-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.codeproject.com/)
 - [Documentation](https://api.codeproject.com/Help)
-- [Samples](https://api.codeproject.com/Samples)
-- [Terms of Service](https://www.codeproject.com/Terms)
-- [Privacy Policy](https://www.codeproject.com/privacy)
-- [Forum](https://www.codeproject.com/Lounge.aspx)
-- [Tutorials](https://www.codeproject.com/KB/)
 - [Support](https://www.codeproject.com/Questions/)
-- [Newsletter](https://www.codeproject.com/newsletters)
-- [Portal](https://codeproject.ai/)
-- [Git Hub](https://github.com/codeproject)
-- [JSON-LD](json-ld/codeproject-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/codeproject-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
+- [Terms of service](https://www.codeproject.com/Terms)
+- [Privacy policy](https://www.codeproject.com/privacy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 39.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 46.1 |
+| Contract governance | 13.6 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 28.9 |
+
+**Agent readiness 25.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.7** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/codeproject/](https://apis.io/providers/codeproject/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CodeProject: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/codeproject/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
